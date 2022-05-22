@@ -8,30 +8,29 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\jmonteiro\\.nuget\\packages\\": {}
+    "/Users/fabio_oliveira_010/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jmonteiro\\source\\repos\\PAP_Fabio\\PAP_Fabio\\PAP_Fabio.csproj",
+      "projectUniqueName": "/Users/fabio_oliveira_010/Projects/PAP_Fabio/PAP_Fabio/PAP_Fabio.csproj",
       "projectName": "PAP_Fabio",
-      "projectPath": "C:\\Users\\jmonteiro\\source\\repos\\PAP_Fabio\\PAP_Fabio\\PAP_Fabio.csproj",
-      "packagesPath": "C:\\Users\\jmonteiro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jmonteiro\\source\\repos\\PAP_Fabio\\PAP_Fabio\\obj\\",
+      "projectPath": "/Users/fabio_oliveira_010/Projects/PAP_Fabio/PAP_Fabio/PAP_Fabio.csproj",
+      "packagesPath": "/Users/fabio_oliveira_010/.nuget/packages/",
+      "outputPath": "/Users/fabio_oliveira_010/Projects/PAP_Fabio/PAP_Fabio/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jmonteiro\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/fabio_oliveira_010/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -43,6 +42,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "imports": [
           "net461",
           "net462",
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.101/RuntimeIdentifierGraph.json"
       }
     }
   }
