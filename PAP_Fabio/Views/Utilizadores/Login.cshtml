@@ -1,5 +1,35 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model  PAP_Fabio.Models.Utilizador
 @{
+    ViewData["Title"] = "Iniciar Sessão";
 }
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5" style=" border: 0; border-radius: 1rem; box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);">
+                <div class="card-body">
+                    <img src="" width="150" height="90" class="" style="display:block;margin:auto;">
+                    <br />
+                    <form class="form-signin" method="post">
+                        <div class="form-label-group">
+                            <input type="text" asp-for="Email" id="inputEmail" class="form-control" placeholder="Email de Utilizador" style=" height: auto; border-radius: 2rem;" required autofocus>
+                        </div>
+                        <br />
+                        <div class="form-label-group" style=" position: relative; margin-bottom: 1rem; ">
+                            <input type="password" asp-for="Pass" id="inputPassword" class="form-control" style=" height: auto; border-radius: 2rem;" placeholder="Password" required>
+                        </div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Lembrar password</label>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" style=" font-size: 80%; border-radius: 5rem; letter-spacing: .1rem; font-weight: bold; padding: 1rem; transition: all 0.2s;">Iniciar Sessão</button>
+                        <br />
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
