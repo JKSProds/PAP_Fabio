@@ -27,7 +27,7 @@ namespace PAP_Fabio
         {
             //var passwordHasher = new PasswordHasher<string>();
             //Console.WriteLine(passwordHasher.HashPassword(null, "12345"));
-            //AQAAAAEAACcQAAAAEPVRLIys24pi04S2A6ob77g1ifScAkUVemWq1Wot6AAX1iZShxfIvrcEvy7nWTcBWA==
+            
 
             services.Add(new ServiceDescriptor(typeof(DB_Context), new DB_Context("server=localhost;port=8889;user=root;password=root;database=pap_fabio;SslMode=none")));
 
