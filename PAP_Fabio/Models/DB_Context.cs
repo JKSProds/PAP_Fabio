@@ -43,5 +43,33 @@ namespace PAP_Fabio.Models
 
             return LstUtilizador;
         }
+
+        public Utilizador ObterUtilizador(string email)
+        {
+            Utilizador res = new Utilizador();
+
+            using (Database db = ConnectionString)
+            {
+                using var result = db.Query("SELECT * FROM utilizadores where email='" + email + "';");
+                result.Read();
+                if(result.Reader.HasRows)
+                {
+                    res = new Utilizador()
+                    {
+                        ID = result["id_user"],
+                        Nome = result["nome"],
+                        Email = result["email"],
+                        Pass = result["pass"],
+                        tipo = result["tipo"],
+                        admin = result["admin"] == "1"
+                    };
+                }
+                
+            }
+
+            return res;
+        }
+
+
     }
 }

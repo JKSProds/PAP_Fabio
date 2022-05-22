@@ -24,7 +24,7 @@ namespace PAP_Fabio
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Add(new ServiceDescriptor(typeof(DB_Context), new DB_Context("server=localhost;database=pap_fabio;SslMode=none")));
+            services.Add(new ServiceDescriptor(typeof(DB_Context), new DB_Context("server=localhost;port=8889;user=root;password=root;database=pap_fabio;SslMode=none")));
 
             services.AddControllersWithViews();
         }

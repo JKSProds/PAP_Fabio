@@ -8,4 +8,10 @@
     <PackageReference Include="MySql.Simple" Version="5.3.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Views\Utilizadores\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Utilizadores\" />
+  </ItemGroup>
 </Project>
