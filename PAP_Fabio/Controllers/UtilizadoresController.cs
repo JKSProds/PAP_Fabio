@@ -15,6 +15,11 @@ namespace PAP_Fabio.Controllers
 {
     public class UtilizadoresController : Controller
     {
+        public IActionResult Index()
+        {
+            return View();
+        }
+
         public IActionResult Login(string email, string password)
         {
             ViewData["ReturnUrl"] = Request.Query["ReturnURL"];
@@ -68,7 +73,7 @@ namespace PAP_Fabio.Controllers
 
             Utilizador utilizador = context.ObterUtilizador(utilizador_req.Email);
 
-            if (utilizador != new Utilizador()) ModelState.AddModelError("", "Não foram encontrados utlizadores com esse nome!");
+            if (utilizador == new Utilizador()) ModelState.AddModelError("", "Não foram encontrados utlizadores com esse nome!");
 
             var passwordHasher = new PasswordHasher<string>();
             if (passwordHasher.VerifyHashedPassword(null, utilizador.Pass, utilizador_req.Pass) == PasswordVerificationResult.Success)
@@ -84,7 +89,7 @@ namespace PAP_Fabio.Controllers
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
 
-                if (ViewData["ReturnUrl"].ToString() != "" && ViewData["ReturnUrl"].ToString() != null)
+                if (ReturnUrl != "" && ReturnUrl != null)
                 {
                     Response.Redirect(ViewData["ReturnUrl"].ToString(), true);
                 }

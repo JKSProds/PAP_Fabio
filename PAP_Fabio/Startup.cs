@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,13 +26,24 @@ namespace PAP_Fabio
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
+            services.AddMvc();
+
             //var passwordHasher = new PasswordHasher<string>();
             //Console.WriteLine(passwordHasher.HashPassword(null, "123456"));
-            
 
             services.Add(new ServiceDescriptor(typeof(DB_Context), new DB_Context("server=localhost;port=8889;user=root;password=root;database=pap_fabio;SslMode=none")));
 
-            services.AddControllersWithViews();
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = Microsoft.AspNetCore.Http.SameSiteMode.None;
+            });
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(cookieOptions =>
+            {
+                cookieOptions.LoginPath = "/Utilizadores/Login";
+                cookieOptions.AccessDeniedPath = "/Home/AcessoNegado";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +59,7 @@ namespace PAP_Fabio
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
