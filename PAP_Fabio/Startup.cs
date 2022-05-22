@@ -26,7 +26,7 @@ namespace PAP_Fabio
         public void ConfigureServices(IServiceCollection services)
         {
             //var passwordHasher = new PasswordHasher<string>();
-            //Console.WriteLine(passwordHasher.HashPassword(null, "12345"));
+            //Console.WriteLine(passwordHasher.HashPassword(null, "123456"));
             
 
             services.Add(new ServiceDescriptor(typeof(DB_Context), new DB_Context("server=localhost;port=8889;user=root;password=root;database=pap_fabio;SslMode=none")));
