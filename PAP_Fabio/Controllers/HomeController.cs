@@ -20,7 +20,8 @@ namespace PAP_Fabio.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
+            return View(context.ObterAlunos());
         }
 
         public IActionResult Privacy()
