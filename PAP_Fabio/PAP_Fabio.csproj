@@ -11,7 +11,4 @@
   <ItemGroup>
     <None Remove="Views\Utilizadores\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Utilizadores\" />
-  </ItemGroup>
 </Project>

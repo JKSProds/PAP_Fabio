@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +25,10 @@ namespace PAP_Fabio
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //var passwordHasher = new PasswordHasher<string>();
+            //Console.WriteLine(passwordHasher.HashPassword(null, "12345"));
+            //AQAAAAEAACcQAAAAEPVRLIys24pi04S2A6ob77g1ifScAkUVemWq1Wot6AAX1iZShxfIvrcEvy7nWTcBWA==
+
             services.Add(new ServiceDescriptor(typeof(DB_Context), new DB_Context("server=localhost;port=8889;user=root;password=root;database=pap_fabio;SslMode=none")));
 
             services.AddControllersWithViews();
