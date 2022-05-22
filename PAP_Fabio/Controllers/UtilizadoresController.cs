@@ -15,9 +15,12 @@ namespace PAP_Fabio.Controllers
 {
     public class UtilizadoresController : Controller
     {
-        public IActionResult Index()
+        public IActionResult QR()
         {
-            return View();
+            DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
+            Utilizador u = context.ObterUtilizador(int.Parse(this.User.Claims.First().Value));
+            u.codigoQR = context.ObterCodigoQR(u);
+            return View(u);
         }
 
         public IActionResult Login(string email, string password)
@@ -73,7 +76,13 @@ namespace PAP_Fabio.Controllers
 
             Utilizador utilizador = context.ObterUtilizador(utilizador_req.Email);
 
-            if (utilizador == new Utilizador()) ModelState.AddModelError("", "Não foram encontrados utlizadores com esse nome!");
+            if (utilizador.Email == null)
+            {
+                ModelState.AddModelError("", "Não foram encontrados utlizadores com esse email!");
+                return View();
+
+            }
+          
 
             var passwordHasher = new PasswordHasher<string>();
             if (passwordHasher.VerifyHashedPassword(null, utilizador.Pass, utilizador_req.Pass) == PasswordVerificationResult.Success)

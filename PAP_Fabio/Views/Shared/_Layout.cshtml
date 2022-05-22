@@ -22,7 +22,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Utilizadores" asp-action="QR">Código QR</a>
                         </li>
                     </ul>
                 </div>
@@ -31,7 +31,7 @@
                         <li class="nav-item">
                             @if (User.Identity.IsAuthenticated)
                             {
-                                <a class="nav-link" href="~/Utilizadores/Logout"><i class="fas fa-sign-out-alt"></i> Terminar Sessão (@User.ObterNomeCompleto())</a>
+                                <a class="nav-link" href="~/Utilizadores/Logout"><i class="fas fa-sign-out-alt"></i> Terminar Sessão (@this.User.Claims.Where(c => c.Type.Contains("givenname")).First().Value)</a>
                             }
                             else
                             {
