@@ -165,7 +165,7 @@
           "lib/netstandard1.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "Microsoft.NETCore.Platforms/1.1.0": {
+      "Microsoft.NETCore.Platforms/5.0.0": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -215,6 +215,24 @@
             "rid": "unix"
           },
           "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Registry.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "Microsoft.Win32.SystemEvents/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -361,6 +379,19 @@
         },
         "runtime": {
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "QRCoder/1.4.3": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "5.0.3",
+          "System.Text.Encoding.CodePages": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/QRCoder.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/QRCoder.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -962,6 +993,28 @@
         },
         "compile": {
           "ref/netstandard1.5/System.Diagnostics.Tracing.dll": {}
+        }
+      },
+      "System.Drawing.Common/5.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "5.0.0"
+        },
+        "compile": {
+          "ref/netcoreapp3.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Drawing.Common.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
         }
       },
       "System.Dynamic.Runtime/4.3.0": {
@@ -1581,16 +1634,13 @@
           "ref/netstandard1.5/System.Runtime.dll": {}
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.3.0": {
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {
         "type": "package",
-        "dependencies": {
-          "System.Runtime": "4.3.0"
-        },
         "compile": {
-          "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
       "System.Runtime.Extensions/4.3.0": {
@@ -1991,31 +2041,20 @@
           "ref/netstandard1.3/System.Text.Encoding.dll": {}
         }
       },
-      "System.Text.Encoding.CodePages/4.3.0": {
+      "System.Text.Encoding.CodePages/5.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "System.Collections": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Handles": "4.3.0",
-          "System.Runtime.InteropServices": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Threading": "4.3.0"
+          "Microsoft.NETCore.Platforms": "5.0.0",
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Text.Encoding.CodePages.dll": {}
+          "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
         },
         "runtimeTargets": {
-          "runtimes/unix/lib/netstandard1.3/System.Text.Encoding.CodePages.dll": {
-            "assetType": "runtime",
-            "rid": "unix"
-          },
-          "runtimes/win/lib/netstandard1.3/System.Text.Encoding.CodePages.dll": {
+          "runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -2379,19 +2418,22 @@
         "microsoft.extensions.primitives.nuspec"
       ]
     },
-    "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+    "Microsoft.NETCore.Platforms/5.0.0": {
+      "sha512": "VyPlqzH2wavqquTcYpkIIAQ6WdenuKoFN0BdYBbCWsclXacSOHNQn66Gt4z5NBqEYW0FAPm5rlvki9ZiCij5xQ==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/1.1.0",
+      "path": "microsoft.netcore.platforms/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+        "microsoft.netcore.platforms.5.0.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
-        "runtime.json"
+        "runtime.json",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "Microsoft.NETCore.Targets/1.1.0": {
@@ -2475,6 +2517,34 @@
         "runtimes/win/lib/net46/Microsoft.Win32.Registry.dll",
         "runtimes/win/lib/netcore50/_._",
         "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Registry.dll"
+      ]
+    },
+    "Microsoft.Win32.SystemEvents/5.0.0": {
+      "sha512": "Bh6blKG8VAKvXiLe2L+sEsn62nc1Ij34MrNxepD2OCrS5cpCwQa9MeLyhVQPQ/R4Wlzwuy6wMK8hLb11QPDRsQ==",
+      "type": "package",
+      "path": "microsoft.win32.systemevents/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Win32.SystemEvents.dll",
+        "lib/net461/Microsoft.Win32.SystemEvents.xml",
+        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
+        "microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+        "microsoft.win32.systemevents.nuspec",
+        "ref/net461/Microsoft.Win32.SystemEvents.dll",
+        "ref/net461/Microsoft.Win32.SystemEvents.xml",
+        "ref/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
+        "ref/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
+        "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.xml",
+        "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "MySql.Data/8.0.9-dmr": {
@@ -2581,6 +2651,27 @@
         "newtonsoft.json.9.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "QRCoder/1.4.3": {
+      "sha512": "fWuFqjm8GTlEb2GqBl3Hi8HZZeZQwBSHxvRPtPjyNbT82H0ff0JwavKRBmMaXCno1Av6McPC8aJzri0Mj2w9Jw==",
+      "type": "package",
+      "path": "qrcoder/1.4.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/QRCoder.dll",
+        "lib/net40/QRCoder.dll",
+        "lib/net5.0-windows7.0/QRCoder.dll",
+        "lib/net5.0/QRCoder.dll",
+        "lib/net6.0-windows7.0/QRCoder.dll",
+        "lib/net6.0/QRCoder.dll",
+        "lib/netstandard1.3/QRCoder.dll",
+        "lib/netstandard2.0/QRCoder.dll",
+        "nuget-icon.png",
+        "nuget-readme.md",
+        "qrcoder.1.4.3.nupkg.sha512",
+        "qrcoder.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -3893,6 +3984,48 @@
         "ref/xamarinwatchos10/_._",
         "system.diagnostics.tracing.4.3.0.nupkg.sha512",
         "system.diagnostics.tracing.nuspec"
+      ]
+    },
+    "System.Drawing.Common/5.0.3": {
+      "sha512": "rEQZuslijqdsO0pkJn7LtGBaMc//YVA8de0meGihkg9oLPaN+w+/Pb5d71lgp0YjPoKgBKNMvdq0IPnoW4PEng==",
+      "type": "package",
+      "path": "system.drawing.common/5.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Drawing.Common.dll",
+        "lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.xml",
+        "ref/netstandard2.0/System.Drawing.Common.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "system.drawing.common.5.0.3.nupkg.sha512",
+        "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Dynamic.Runtime/4.3.0": {
@@ -5568,19 +5701,36 @@
         "system.runtime.nuspec"
       ]
     },
-    "System.Runtime.CompilerServices.Unsafe/4.3.0": {
-      "sha512": "rcnXA1U9W3QUtMSGoyoNHH6w4V5Rxa/EKXmzpORUYlDAlDB34hIQoU57ATXl8xHa83VvzRm6PcElEizgUd7U5w==",
+    "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+      "sha512": "ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
       "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/4.3.0",
+      "path": "system.runtime.compilerservices.unsafe/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net45/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net45/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
         "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
         "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.4.3.0.nupkg.sha512",
-        "system.runtime.compilerservices.unsafe.nuspec"
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/net461/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Runtime.Extensions/4.3.0": {
@@ -6427,43 +6577,45 @@
         "system.text.encoding.nuspec"
       ]
     },
-    "System.Text.Encoding.CodePages/4.3.0": {
-      "sha512": "IRiEFUa5b/Gs5Egg8oqBVoywhtOeaO2KOx3j0RfcYY/raxqBuEK7NXRDgOwtYM8qbi+7S4RPXUbNt+ZxyY0/NQ==",
+    "System.Text.Encoding.CodePages/5.0.0": {
+      "sha512": "NyscU59xX6Uo91qvhOs2Ccho3AR2TnZPomo1Z0K6YpyztBPM/A5VbkzOO19sy3A3i1TtEnTxA7bCe3Us+r5MWg==",
       "type": "package",
-      "path": "system.text.encoding.codepages/4.3.0",
+      "path": "system.text.encoding.codepages/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
         "lib/net46/System.Text.Encoding.CodePages.dll",
+        "lib/net461/System.Text.Encoding.CodePages.dll",
+        "lib/net461/System.Text.Encoding.CodePages.xml",
+        "lib/netstandard1.3/System.Text.Encoding.CodePages.dll",
+        "lib/netstandard2.0/System.Text.Encoding.CodePages.dll",
+        "lib/netstandard2.0/System.Text.Encoding.CodePages.xml",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
-        "ref/netstandard1.3/System.Text.Encoding.CodePages.dll",
-        "ref/netstandard1.3/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/de/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/es/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/fr/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/it/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/ja/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/ko/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/ru/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/zh-hans/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/zh-hant/System.Text.Encoding.CodePages.xml",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "runtimes/unix/lib/netstandard1.3/System.Text.Encoding.CodePages.dll",
+        "runtimes/win/lib/net461/System.Text.Encoding.CodePages.dll",
+        "runtimes/win/lib/net461/System.Text.Encoding.CodePages.xml",
+        "runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.dll",
+        "runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.xml",
         "runtimes/win/lib/netstandard1.3/System.Text.Encoding.CodePages.dll",
-        "system.text.encoding.codepages.4.3.0.nupkg.sha512",
-        "system.text.encoding.codepages.nuspec"
+        "runtimes/win/lib/netstandard2.0/System.Text.Encoding.CodePages.dll",
+        "runtimes/win/lib/netstandard2.0/System.Text.Encoding.CodePages.xml",
+        "system.text.encoding.codepages.5.0.0.nupkg.sha512",
+        "system.text.encoding.codepages.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Text.Encoding.Extensions/4.3.0": {
@@ -7084,34 +7236,34 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "MySql.Simple >= 5.3.5"
+      "MySql.Simple >= 5.3.5",
+      "QRCoder >= 1.4.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jmonteiro\\.nuget\\packages\\": {}
+    "/Users/fabio_oliveira_010/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jmonteiro\\source\\repos\\PAP_Fabio\\PAP_Fabio\\PAP_Fabio.csproj",
+      "projectUniqueName": "/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/PAP_Fabio.csproj",
       "projectName": "PAP_Fabio",
-      "projectPath": "C:\\Users\\jmonteiro\\source\\repos\\PAP_Fabio\\PAP_Fabio\\PAP_Fabio.csproj",
-      "packagesPath": "C:\\Users\\jmonteiro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jmonteiro\\source\\repos\\PAP_Fabio\\PAP_Fabio\\obj\\",
+      "projectPath": "/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/PAP_Fabio.csproj",
+      "packagesPath": "/Users/fabio_oliveira_010/.nuget/packages/",
+      "outputPath": "/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jmonteiro\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/fabio_oliveira_010/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -7123,10 +7275,15 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "MySql.Simple": {
             "target": "Package",
             "version": "[5.3.5, )"
+          },
+          "QRCoder": {
+            "target": "Package",
+            "version": "[1.4.3, )"
           }
         },
         "imports": [
@@ -7147,7 +7304,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.101/RuntimeIdentifierGraph.json"
       }
     }
   }

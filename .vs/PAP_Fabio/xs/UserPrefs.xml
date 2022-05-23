@@ -1,12 +1,17 @@
 ﻿<Properties StartupConfiguration="{8F75B4B0-D1A3-41E7-8D9D-E9310651FFA1}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="PAP_Fabio/Views/Shared/_Layout.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PAP_Fabio/Program.cs">
     <Files>
-      <File FileName="PAP_Fabio/Controllers/UtilizadoresController.cs" Line="107" Column="1" />
-      <File FileName="PAP_Fabio/Startup.cs" Line="45" Column="52" />
-      <File FileName="PAP_Fabio/Views/Utilizadores/Login.cshtml" Line="1" Column="1" />
-      <File FileName="PAP_Fabio/Views/Utilizadores/Index.cshtml" Line="10" Column="1" />
-      <File FileName="PAP_Fabio/Models/DB_Context.cs" Line="53" Column="1" />
-      <File FileName="PAP_Fabio/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
+      <File FileName="PAP_Fabio/Controllers/UtilizadoresController.cs" Line="21" Column="1" />
+      <File FileName="PAP_Fabio/Models/DB_Context.cs" Line="32" Column="1" />
+      <File FileName="PAP_Fabio/Views/Shared/_Layout.cshtml" />
+      <File FileName="PAP_Fabio/Controllers/HomeController.cs" />
+      <File FileName="PAP_Fabio/Views/Home/Index.cshtml" />
+      <File FileName="PAP_Fabio/Views/Utilizadores/QR.cshtml" />
+      <File FileName="PAP_Fabio/Views/Shared/_ValidationScriptsPartial.cshtml" />
+      <File FileName="PAP_Fabio/Views/Utilizadores/Login.cshtml" />
+      <File FileName="PAP_Fabio/Startup.cs" />
+      <File FileName="PAP_Fabio/Models/Utilizador.cs" />
+      <File FileName="PAP_Fabio/Program.cs" Line="16" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,11 +22,10 @@
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
-                <Node name="Shared" expanded="True">
-                  <Node name="_Layout.cshtml" selected="True" />
-                </Node>
+                <Node name="Shared" expanded="True" />
                 <Node name="Utilizadores" expanded="True" />
               </Node>
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -33,8 +37,7 @@
   <MonoDevelop.Ide.ItemProperties.PAP__Fabio PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/Controllers/UtilizadoresController.cs" relfile="PAP_Fabio/Controllers/UtilizadoresController.cs" line="25" column="1" />
-      <Breakpoint file="/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/Controllers/UtilizadoresController.cs" relfile="PAP_Fabio/Controllers/UtilizadoresController.cs" line="70" column="1" />
+      <Breakpoint file="/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/Controllers/UtilizadoresController.cs" relfile="PAP_Fabio/Controllers/UtilizadoresController.cs" line="112" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

@@ -13,5 +13,7 @@ namespace PAP_Fabio.Models
         public string Pass { get; set; }
         public int tipo { get; set; }
         public bool admin { get; set; }
+        public string codigoAluno { get; set; }
+        public string codigoQR { get; set; }
     }
 }

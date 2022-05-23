@@ -132,4 +132,13 @@ C:/Users/jmonteiro/source/repos/PAP_Fabio/PAP_Fabio/obj/Debug/netcoreapp3.1/PAP_
 /Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/obj/Debug/netcoreapp3.1/PAP_Fabio.dll
 /Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/obj/Debug/netcoreapp3.1/PAP_Fabio.pdb
 /Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/obj/Debug/netcoreapp3.1/PAP_Fabio.genruntimeconfig.cache
-/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/obj/Debug/netcoreapp3.1/Razor/Views/Utilizadores/Index.cshtml.g.cs
+/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/obj/Debug/netcoreapp3.1/Razor/Views/Utilizadores/QR.cshtml.g.cs
+/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/bin/Debug/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll
+/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/bin/Debug/netcoreapp3.1/QRCoder.dll
+/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/bin/Debug/netcoreapp3.1/System.Drawing.Common.dll
+/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/bin/Debug/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll
+/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/bin/Debug/netcoreapp3.1/System.Text.Encoding.CodePages.dll
+/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll
+/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
+/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll
+/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.dll
