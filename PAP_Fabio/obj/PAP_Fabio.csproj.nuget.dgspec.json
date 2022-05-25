@@ -1,30 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/PAP_Fabio.csproj": {}
+    "C:\\Users\\jmonteiro\\source\\repos\\PAP_Fabio\\PAP_Fabio\\PAP_Fabio.csproj": {}
   },
   "projects": {
-    "/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/PAP_Fabio.csproj": {
+    "C:\\Users\\jmonteiro\\source\\repos\\PAP_Fabio\\PAP_Fabio\\PAP_Fabio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/PAP_Fabio.csproj",
+        "projectUniqueName": "C:\\Users\\jmonteiro\\source\\repos\\PAP_Fabio\\PAP_Fabio\\PAP_Fabio.csproj",
         "projectName": "PAP_Fabio",
-        "projectPath": "/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/PAP_Fabio.csproj",
-        "packagesPath": "/Users/fabio_oliveira_010/.nuget/packages/",
-        "outputPath": "/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/obj/",
+        "projectPath": "C:\\Users\\jmonteiro\\source\\repos\\PAP_Fabio\\PAP_Fabio\\PAP_Fabio.csproj",
+        "packagesPath": "C:\\Users\\jmonteiro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jmonteiro\\source\\repos\\PAP_Fabio\\PAP_Fabio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/fabio_oliveira_010/.config/NuGet/NuGet.Config"
+          "C:\\Users\\jmonteiro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -36,7 +37,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "MySql.Simple": {
               "target": "Package",
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
