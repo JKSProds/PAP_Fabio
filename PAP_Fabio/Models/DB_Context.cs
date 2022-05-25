@@ -12,17 +12,17 @@ namespace PAP_Fabio.Models
         public string ConnectionString { get; set; }
         public DB_Context(string ConnectionString_)
         {
-                ConnectionString = ConnectionString_;
+            ConnectionString = ConnectionString_;
 
-                try
-                {
-                    Database db = ConnectionString;
-                    Console.WriteLine("Connectado á Base de Dados MySQL com sucesso!");
-                }
-                catch
-                {
-                    Console.WriteLine("Não foi possivel conectar á BD MySQL!");
-                }
+            try
+            {
+                Database db = ConnectionString;
+                Console.WriteLine("Connectado á Base de Dados MySQL com sucesso!");
+            }
+            catch
+            {
+                Console.WriteLine("Não foi possivel conectar á BD MySQL!");
+            }
         }
 
         public List<Utilizador> ObterAlunos()
