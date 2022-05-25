@@ -3,22 +3,22 @@
     <Files>
       <File FileName="PAP_Fabio/Controllers/UtilizadoresController.cs" Line="17" Column="6" />
       <File FileName="PAP_Fabio/Models/DB_Context.cs" Line="24" Column="17" />
-      <File FileName="PAP_Fabio/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
-      <File FileName="PAP_Fabio/Controllers/HomeController.cs" Line="21" Column="9" />
-      <File FileName="PAP_Fabio/Views/Home/Index.cshtml" Line="13" Column="1" />
-      <File FileName="PAP_Fabio/Views/Utilizadores/QR.cshtml" Line="9" Column="1" />
-      <File FileName="PAP_Fabio/Views/Shared/_ValidationScriptsPartial.cshtml" Line="1" Column="1" />
-      <File FileName="PAP_Fabio/Views/Utilizadores/Login.cshtml" Line="22" Column="49" />
-      <File FileName="PAP_Fabio/Startup.cs" Line="32" Column="65" />
-      <File FileName="PAP_Fabio/Models/Utilizador.cs" Line="1" Column="1" />
-      <File FileName="PAP_Fabio/Program.cs" Line="10" Column="12" />
-      <File FileName="PAP_Fabio/Models/ErrorViewModel.cs" Line="10" Column="6" />
-      <File FileName="PAP_Fabio/Views/Home/Privacy.cshtml" Line="1" Column="1" />
-      <File FileName="PAP_Fabio/Views/Shared/Error.cshtml" Line="1" Column="1" />
-      <File FileName="PAP_Fabio/Views/_ViewImports.cshtml" Line="1" Column="1" />
-      <File FileName="PAP_Fabio/Views/_ViewStart.cshtml" Line="4" Column="1" />
-      <File FileName="PAP_Fabio/appsettings.Development.json" Line="1" Column="1" />
-      <File FileName="PAP_Fabio/wwwroot/css/site.css" Line="1" Column="1" />
+      <File FileName="PAP_Fabio/Views/Shared/_Layout.cshtml" />
+      <File FileName="PAP_Fabio/Controllers/HomeController.cs" />
+      <File FileName="PAP_Fabio/Views/Home/Index.cshtml" />
+      <File FileName="PAP_Fabio/Views/Utilizadores/QR.cshtml" />
+      <File FileName="PAP_Fabio/Views/Shared/_ValidationScriptsPartial.cshtml" />
+      <File FileName="PAP_Fabio/Views/Utilizadores/Login.cshtml" />
+      <File FileName="PAP_Fabio/Startup.cs" />
+      <File FileName="PAP_Fabio/Models/Utilizador.cs" />
+      <File FileName="PAP_Fabio/Program.cs" />
+      <File FileName="PAP_Fabio/Models/ErrorViewModel.cs" />
+      <File FileName="PAP_Fabio/Views/Home/Privacy.cshtml" />
+      <File FileName="PAP_Fabio/Views/Shared/Error.cshtml" />
+      <File FileName="PAP_Fabio/Views/_ViewImports.cshtml" />
+      <File FileName="PAP_Fabio/Views/_ViewStart.cshtml" />
+      <File FileName="PAP_Fabio/appsettings.Development.json" />
+      <File FileName="PAP_Fabio/wwwroot/css/site.css" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
