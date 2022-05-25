@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="PAP_Fabio/Program.cs">
     <Files>
       <File FileName="PAP_Fabio/Controllers/UtilizadoresController.cs" Line="21" Column="1" />
-      <File FileName="PAP_Fabio/Models/DB_Context.cs" Line="32" Column="1" />
+      <File FileName="PAP_Fabio/Models/DB_Context.cs" />
       <File FileName="PAP_Fabio/Views/Shared/_Layout.cshtml" />
       <File FileName="PAP_Fabio/Controllers/HomeController.cs" />
       <File FileName="PAP_Fabio/Views/Home/Index.cshtml" />
