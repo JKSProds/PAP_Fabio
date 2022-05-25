@@ -11,7 +11,7 @@
       <File FileName="PAP_Fabio/Views/Utilizadores/Login.cshtml" />
       <File FileName="PAP_Fabio/Startup.cs" />
       <File FileName="PAP_Fabio/Models/Utilizador.cs" />
-      <File FileName="PAP_Fabio/Program.cs" Line="16" Column="1" />
+      <File FileName="PAP_Fabio/Program.cs" Line="27" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
