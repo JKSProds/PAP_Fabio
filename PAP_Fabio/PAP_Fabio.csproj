@@ -13,4 +13,10 @@
     <None Remove="Views\Utilizadores\" />
     <None Remove="QRCoder" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\img\" />
+  </ItemGroup>
 </Project>
