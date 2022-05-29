@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PAP_Fabio.Models.Utilizador>
+
+@{
+    ViewData["Title"] = "Utilizadores";
+}
+
+
+<div class="text-center">
+    <form asp-action="Index" method="get">
+        <div class="row">
+            <div class="col-md-4 page-header">
+                <h4>Utilizadores</h4>
+            </div>
+
+            <div class="input-group col-md-8">
+                <input type="text" style="height: auto" class="form-control" placeholder="Filtro" id="txtFiltro" name="filter" value="@ViewData["filter"]" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <select class="form-control" id="lstarea" style="height: auto" onchange="filtrar()"
+                            asp-items="@(new SelectList(@ViewBag.TipoUtilizador, "Value", "Text", @ViewData["tipo"]))">
+                    </select>
+                    <button class="btn btn-outline-success" type="submit"> <i class="fa fa-search"></i> Procurar</button>
+                    <button class="btn btn-outline-secondary" type="button" onclick="window.location.href = '/Utilizadores'"> <i class="fa fa-backspace"></i> Limpar</button>
+                    <button class="btn btn-outline-primary" type="button" onclick="window.location.href = '/Utilizadores/Novo'"><i class="fas fa-plus"></i> Novo</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+    <table class="table table-hover">
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+         {
+    <tr>
+        <td>@item.codigoAluno</td>
+        <td>@item.Nome</td>
+        <td><a href="mailto:@item.Email">@item.Email</a><td>
+        <td>
+            <a class="btn btn-outline-success btn-lg" href="" target="_blank"><i class="fas fa-pencil-alt float-left" style="margin-top:5px"></i></a>
+            <a class="btn btn-outline-danger btn-lg" href="" target="_blank"><i class="fas fa-trash float-left" style="margin-top:5px"></i></a>
+        </td>
+    </tr>
+         }
+    </table>
+
+</div>
+

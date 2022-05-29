@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PAP_Fabio.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -28,10 +30,10 @@ namespace PAP_Fabio.Controllers
 
                 if (utilizador != new Utilizador()) ModelState.AddModelError("", "Não foram encontrados utlizadores com esse nome!");
 
-                    var passwordHasher = new PasswordHasher<string>();
-                    if (passwordHasher.VerifyHashedPassword(null, utilizador.Pass, utilizador_req.Pass) == PasswordVerificationResult.Success)
-                    {
-                        var claims = new List<Claim>
+                var passwordHasher = new PasswordHasher<string>();
+                if (passwordHasher.VerifyHashedPassword(null, utilizador.Pass, utilizador_req.Pass) == PasswordVerificationResult.Success)
+                {
+                    var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.Name, utilizador.ID.ToString()),
                         new Claim(ClaimTypes.GivenName, utilizador.Nome),
@@ -39,23 +41,23 @@ namespace PAP_Fabio.Controllers
                         new Claim(ClaimTypes.Role, utilizador.tipo == 1 ? "Professor" : utilizador.tipo == 2 ? "Funcionario" : "Aluno")
 
                     };
-                        var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                        HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
+                    var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
 
-                        if (ViewData["ReturnUrl"].ToString() != "" && ViewData["ReturnUrl"].ToString() != null)
-                        {
-                            Response.Redirect(ViewData["ReturnUrl"].ToString(), true);
-                        }
-                        else
-                        {
-                            return RedirectToAction("Index", "Home");
-                        }
-
+                    if (ViewData["ReturnUrl"].ToString() != "" && ViewData["ReturnUrl"].ToString() != null)
+                    {
+                        Response.Redirect(ViewData["ReturnUrl"].ToString(), true);
                     }
                     else
                     {
-                        ModelState.AddModelError("", "Password errada!");
+                        return RedirectToAction("Index", "Home");
                     }
+
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Password errada!");
+                }
             }
             return View();
         }
@@ -75,7 +77,7 @@ namespace PAP_Fabio.Controllers
                 return View();
 
             }
-          
+
 
             var passwordHasher = new PasswordHasher<string>();
             if (passwordHasher.VerifyHashedPassword(null, utilizador.Pass, utilizador_req.Pass) == PasswordVerificationResult.Success)
@@ -115,5 +117,31 @@ namespace PAP_Fabio.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [Authorize(Roles = "Admin")]
+
+        public IActionResult Index(string filter, int? tipo, int? page)
+        {
+            
+            DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
+
+            int pageSize = 50;
+            var pageNumber = page ?? 1;
+
+            List<String> LstTipo = new List<string>() { "Aluno", "Professor", "Funcionário" };
+
+            ViewBag.TipoUtilizador = LstTipo.Select(l => new SelectListItem() { Value = l, Text = l });
+
+            if (filter == null) { filter = ""; }
+            if (tipo == null) { tipo = 3; }
+
+            ViewData["filter"] = filter;
+            ViewData["tipo"] = tipo;
+
+
+           
+            //return View(context.ObterUtilizadores(tipo).Where(c => c.Nome.Contains(filter)).ToPagedList(pageNumber, pageSize));
+            return View(context.ObterUtilizadores(tipo).Where(c => c.Nome.Contains(filter)));
+        }
     }
+            
 }
