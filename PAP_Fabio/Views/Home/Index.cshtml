@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PAP_Fabio.Models.Utilizador>
+﻿@model PAP_Fabio.Models.Utilizador
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -8,5 +8,18 @@
     <h4 class="display-4">Escola Secundária Padre Benjamim Salgado</h4>
     <p>&nbsp</p>
     <p>Esta APP tem o objetivo de melhorar e facilitar a vida aos alunos substituindo assim o <br />cartão da Escola por um código QR único para todos.</p>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <p>&nbsp</p>
+        <div class="text-center">
+            <h4>Código QR de @this.User.Claims.Where(c => c.Type.Contains("givenname")).First().Value</h4>
+        </div>
+
+        <div class="text-center">
+            <img src="@Model.codigoQR" style="width:70%"/>
+        </div>
+
+    })
 </div>
 
