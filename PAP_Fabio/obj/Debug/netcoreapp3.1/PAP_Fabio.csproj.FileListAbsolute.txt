@@ -141,3 +141,4 @@ C:/Users/jmonteiro/source/repos/PAP_Fabio/PAP_Fabio/obj/Debug/netcoreapp3.1/PAP_
 /Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/obj/Debug/netcoreapp3.1/PAP_Fabio.dll
 /Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/obj/Debug/netcoreapp3.1/PAP_Fabio.pdb
 /Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/obj/Debug/netcoreapp3.1/PAP_Fabio.genruntimeconfig.cache
+/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/obj/Debug/netcoreapp3.1/PAP_Fabio.csproj.AssemblyReference.cache
