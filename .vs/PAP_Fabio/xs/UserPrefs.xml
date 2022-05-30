@@ -1,12 +1,15 @@
 ﻿<Properties StartupConfiguration="{8F75B4B0-D1A3-41E7-8D9D-E9310651FFA1}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="PAP_Fabio/Controllers/UtilizadoresController.cs">
     <Files>
-      <File FileName="PAP_Fabio/Views/Shared/_Layout.cshtml" Line="18" Column="1" />
-      <File FileName="PAP_Fabio/Controllers/UtilizadoresController.cs" Line="143" Column="92" />
-      <File FileName="PAP_Fabio/Models/DB_Context.cs" />
-      <File FileName="PAP_Fabio/Views/Home/Index.cshtml" />
-      <File FileName="PAP_Fabio/Views/Utilizadores/Index.cshtml" />
+      <File FileName="PAP_Fabio/Views/Utilizadores/AcessoNegado.cshtml" Line="1" Column="19" />
+      <File FileName="PAP_Fabio/Views/Utilizadores/Index.cshtml" Line="28" Column="12" />
+      <File FileName="PAP_Fabio/Views/Shared/_ValidationScriptsPartial.cshtml" Line="1" Column="1" />
+      <File FileName="PAP_Fabio/Views/Shared/_Layout.cshtml" Line="37" Column="30" />
+      <File FileName="PAP_Fabio/Controllers/UtilizadoresController.cs" Line="25" Column="40" />
       <File FileName="PAP_Fabio/Controllers/HomeController.cs" Line="20" Column="1" />
+      <File FileName="PAP_Fabio/Views/Home/Index.cshtml" Line="23" Column="6" />
+      <File FileName="PAP_Fabio/Views/Home/Privacy.cshtml" Line="1" Column="1" />
+      <File FileName="PAP_Fabio/Models/ErrorViewModel.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,7 +30,9 @@
                 <Node name="css" expanded="True" />
                 <Node name="img" expanded="True" />
                 <Node name="js" expanded="True" />
-                <Node name="lib" expanded="True" />
+                <Node name="lib" expanded="True">
+                  <Node name="bootstrap" expanded="True" />
+                </Node>
               </Node>
               <Node name="appsettings.json" expanded="True" />
             </Node>
@@ -40,9 +45,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.PAP__Fabio PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/Controllers/UtilizadoresController.cs" relfile="PAP_Fabio/Controllers/UtilizadoresController.cs" line="36" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
