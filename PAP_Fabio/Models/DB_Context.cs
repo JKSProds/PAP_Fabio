@@ -133,5 +133,30 @@ namespace PAP_Fabio.Models
 
             return res;
         }
+
+        public Utilizador Editar(int ID)
+        {
+            Utilizador res = new Utilizador();
+
+            using (Database db = ConnectionString)
+            {
+                using var result = db.Query("UPDATE * FROM utilizadores where id_user ='" + ID + "';");
+                result.Read();
+                if (result.Reader.HasRows)
+                {
+                    res = new Utilizador()
+                    {
+                        ID = result["id_user"],
+                        Nome = result["nome"],
+                        Email = result["email"],
+                        Pass = result["pass"],
+                        tipo = result["tipo"],
+                    };
+                }
+
+            }
+
+            return res;
+        }
     }
 }

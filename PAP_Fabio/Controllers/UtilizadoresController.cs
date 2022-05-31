@@ -142,6 +142,16 @@ namespace PAP_Fabio.Controllers
             //return View(context.ObterUtilizadores(tipo).Where(c => c.Nome.Contains(filter)).ToPagedList(pageNumber, pageSize));
             return View(context.ObterUtilizadores(tipo).Where(c => c.Nome.Contains(filter)));
         }
+
+        public IActionResult Editar()
+        {
+            return View();
+        }
+
+        public IActionResult AcessoNegado()
+        {
+            return View();
+        }
     }
             
 }

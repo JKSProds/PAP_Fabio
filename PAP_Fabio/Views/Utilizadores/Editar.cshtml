@@ -1,0 +1,13 @@
+﻿@model PAP_Fabio.Models.Utilizador
+
+@{
+    ViewData["Title"] = "Editar Utilizador";
+}
+
+
+<div class="text-center">
+
+    <h1>Editar @this.User.Claims.Where(c => c.Type.Contains("givenname")).First().Value </h1>
+
+</div>
+
