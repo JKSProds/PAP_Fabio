@@ -8,19 +8,10 @@
     <p>&nbsp</p>
     <h4 class="display-4">Ocorreu um Erro</h4>
     <p>&nbsp</p>
-    <p><a asp-action="Index">Voltar para trás</a></p>
-
-    @if (User.Identity.IsAuthenticated)
-    {
-        <p>&nbsp</p>
-        <div class="text-center">
-            <h4>Código QR de @this.User.Claims.Where(c => c.Type.Contains("givenname")).First().Value</h4>
-        </div>
-
-        <div class="text-center">
-            <img src="@Model.codigoQR" style="width:70%" />
-        </div>
+    <button class="btn btn-outline-success" type="submit" onclick="window.location.href = '/Home/Index'"> <i class="fa fa-error"></i> Voltar Atrás</button>
 
 
-    }
+
+
+
 </div>

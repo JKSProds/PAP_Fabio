@@ -39,10 +39,11 @@ namespace PAP_Fabio
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = Microsoft.AspNetCore.Http.SameSiteMode.None;
             });
+
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(cookieOptions =>
             {
                 cookieOptions.LoginPath = "/Utilizadores/Login";
-                cookieOptions.AccessDeniedPath = "/Home/AcessoNegado";
+                cookieOptions.AccessDeniedPath = "/Utilizadores/AcessoNegado";
             });
         }
 

@@ -19,7 +19,7 @@ namespace PAP_Fabio.Controllers
     {
 
         public IActionResult Login(string email, string password)
-        {
+        { 
             ViewData["ReturnUrl"] = Request.Query["ReturnURL"];
             Utilizador utilizador_req = new Utilizador { Email = email, Pass = password };
             if (email != null && password != null)
@@ -52,7 +52,7 @@ namespace PAP_Fabio.Controllers
                     {
                         return RedirectToAction("Index", "Home");
                     }
-
+                   
                 }
                 else
                 {
@@ -124,7 +124,7 @@ namespace PAP_Fabio.Controllers
             
             DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
 
-            int pageSize = 50;
+            //int pageSize = 50;
             var pageNumber = page ?? 1;
 
             List<String> LstTipo = new List<string>() { "Aluno", "Professor", "Funcionário" };
@@ -136,8 +136,6 @@ namespace PAP_Fabio.Controllers
 
             ViewData["filter"] = filter;
             ViewData["tipo"] = tipo;
-
-
            
             //return View(context.ObterUtilizadores(tipo).Where(c => c.Nome.Contains(filter)).ToPagedList(pageNumber, pageSize));
             return View(context.ObterUtilizadores(tipo).Where(c => c.Nome.Contains(filter)));
@@ -147,7 +145,7 @@ namespace PAP_Fabio.Controllers
         {
             return View();
         }
-
+     
         public IActionResult AcessoNegado()
         {
             return View();
