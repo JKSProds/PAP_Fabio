@@ -135,7 +135,7 @@ namespace PAP_Fabio.Models
         }
 
 
-        public Utilizador Editar(int ID)
+        public Utilizador Editar(string nome, string v, int ID)
         {
             Utilizador res = new Utilizador();
 
@@ -159,5 +159,11 @@ namespace PAP_Fabio.Models
 
             return res;
         }
+
+        internal void Editar(Editar editar)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

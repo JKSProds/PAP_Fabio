@@ -1,21 +1,14 @@
 ﻿<Properties StartupConfiguration="{8F75B4B0-D1A3-41E7-8D9D-E9310651FFA1}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="PAP_Fabio/Controllers/HomeController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PAP_Fabio/Controllers/UtilizadoresController.cs">
     <Files>
-      <File FileName="PAP_Fabio/Views/Utilizadores/Editar.cshtml" Line="14" Column="1" />
-      <File FileName="PAP_Fabio/Views/Utilizadores/Index.cshtml" />
-      <File FileName="PAP_Fabio/Views/Shared/_Layout.cshtml" />
-      <File FileName="PAP_Fabio/Controllers/HomeController.cs" Line="31" Column="13" />
-      <File FileName="PAP_Fabio/Controllers/UtilizadoresController.cs" />
-      <File FileName="PAP_Fabio/Models/DB_Context.cs" />
-      <File FileName="PAP_Fabio/Models/Utilizador.cs" />
-      <File FileName="PAP_Fabio/Models/ErrorViewModel.cs" />
-      <File FileName="PAP_Fabio/Views/Utilizadores/AcessoNegado.cshtml" />
-      <File FileName="PAP_Fabio/Views/Utilizadores/Login.cshtml" />
-      <File FileName="PAP_Fabio/Views/Home/Index.cshtml" />
-      <File FileName="PAP_Fabio/Views/Home/Privacy.cshtml" />
-      <File FileName="PAP_Fabio/Views/Shared/_ValidationScriptsPartial.cshtml" />
-      <File FileName="PAP_Fabio/wwwroot/css/site.css" />
-      <File FileName="PAP_Fabio/Startup.cs" />
+      <File FileName="PAP_Fabio/Controllers/UtilizadoresController.cs" Line="86" Column="22" />
+      <File FileName="PAP_Fabio/Models/DB_Context.cs" Line="153" Column="42" />
+      <File FileName="PAP_Fabio/Models/Editar.cs" Line="9" Column="24" />
+      <File FileName="PAP_Fabio/Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="PAP_Fabio/Models/Utilizador.cs" Line="1" Column="1" />
+      <File FileName="PAP_Fabio/Models/ErrorViewModel.cs" Line="1" Column="1" />
+      <File FileName="PAP_Fabio/Views/Utilizadores/Editar.cshtml" Line="21" Column="79" />
+      <File FileName="PAP_Fabio/Startup.cs" Line="38" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,7 +16,7 @@
           <Node name="PAP_Fabio" expanded="True">
             <Node name="PAP_Fabio" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="HomeController.cs" selected="True" />
+                <Node name="UtilizadoresController.cs" selected="True" />
               </Node>
               <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />

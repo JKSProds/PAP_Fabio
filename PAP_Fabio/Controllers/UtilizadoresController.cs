@@ -136,8 +136,7 @@ namespace PAP_Fabio.Controllers
 
             ViewData["filter"] = filter;
             ViewData["tipo"] = tipo;
-           
-            //return View(context.ObterUtilizadores(tipo).Where(c => c.Nome.Contains(filter)).ToPagedList(pageNumber, pageSize));
+
             return View(context.ObterUtilizadores(tipo).Where(c => c.Nome.Contains(filter)));
         }
 
@@ -150,6 +149,48 @@ namespace PAP_Fabio.Controllers
         {
             return View();
         }
+
+       
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+        public ActionResult Editar(string id, Editar editar)
+        {
+            try
+            {
+                DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context )) as DB_Context;
+                editar.ID_Aluno = id;
+                context.Editar(editar);
+                context.Editar(context.ObterUtilizador(int.Parse(this.User.Claims.First().Value)).Nome, "Foi alterado o utilizador " + editar.ID_Aluno, 1);
+
+                return Redirect("~/Utilizadores/Editar/");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public ActionResult Apagar(string Id, int userid)
+        {
+            try
+            {
+
+                DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
+                //context.userid(context.ObterProduto(Id, userid));
+                //context.userid(context.ObterUtilizador(int.Parse(this.User.Claims.First().Value)).NomeUtilizador, "Foi apagado o utilizador " + Id, 1);
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
     }
             
 }
