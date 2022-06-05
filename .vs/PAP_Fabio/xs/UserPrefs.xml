@@ -4,7 +4,7 @@
       <File FileName="PAP_Fabio/Controllers/UtilizadoresController.cs" Line="140" Column="1" />
       <File FileName="PAP_Fabio/Models/DB_Context.cs" />
       <File FileName="PAP_Fabio/Models/Editar.cs" Line="9" Column="24" />
-      <File FileName="PAP_Fabio/Views/Utilizadores/Editar.cshtml" Line="6" Column="1" />
+      <File FileName="PAP_Fabio/Views/Utilizadores/Editar.cshtml" Line="17" Column="52" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
