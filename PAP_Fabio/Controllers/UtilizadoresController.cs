@@ -103,16 +103,17 @@ namespace PAP_Fabio.Controllers
                 }
 
             }
+
             else
             {
                 ModelState.AddModelError("", "Password errada!");
             }
             return View();
+
         }
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
-
 
             return RedirectToAction("Index", "Home");
         }
