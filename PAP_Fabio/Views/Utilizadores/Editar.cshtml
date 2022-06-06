@@ -1,48 +1,55 @@
-﻿@model PAP_Fabio.Models.Editar
+﻿@model IEnumerable<PAP_Fabio.Models.Utilizador>
 
 @{
     ViewData["Title"] = "Editar Utilizador";
 }
 
-<div class="text-center">
 
-    <h1>Editar @this.User.Claims.Where(c => c.Type.Contains("givenname")).First().Value </h1>
+@foreach (var item in Model)
+{
 
-    <form asp-action="Editar">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="container d-none d-lg-block">
-            <div class="row col-12">
-                
-                <div class="col-8 row">
-                    <div class="form-group col-12">
-                        <label asp-for="ID_Aluno" class="control-label"></label>
-                        <input type="text" asp-for="ID_Aluno" class="form-control" readonly />
-                        <span asp-validation-for="ID_Aluno" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-12">
-                        <label asp-for="Nome_Aluno" class="control-label"></label>
-                        <input type="text" asp-for="Nome_Aluno" class="form-control" />
-                        <span asp-validation-for="Nome_Aluno" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-12">
-                        <label asp-for="Email_Aluno" class="control-label"></label>
-                        <input type="email" asp-for="Email_Aluno" class="form-control" />
-                        <span asp-validation-for="Email_Aluno" class="text-danger"></span>
+    <div class="text-center">
+
+        <h1>Editar @this.User.Claims.Where(c => c.Type.Contains("givenname")).First().Value </h1>
+        <p>&nbsp</p>
+        <form asp-action="Utilizador">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="container d-none d-lg-block">
+
+                <div class="row col-12">
+                    <div class="col-12 row">
+                        <div class="form-group col-6">
+                            <label class="control-label">@item.ID</label>
+                            <input class="form-control" readonly />
+                            <span class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-6">
+                            <label class="control-label">@item.Nome</label>
+                            <input class="form-control" />
+                            <span class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-12">
+                            <label class="control-label">@item.Email</label>
+                            <input type="email" class="form-control" />
+                            <span class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group" style="width: 100%">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block" style="color: #236954;">
+                                <i class="fas fa-save"></i> Guardar Alterações
+                            </button>
+                        </div>
+
+
                     </div>
 
                 </div>
-     
-                <div class="form-group" style="width: 100%">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">
-                        <i class="fas fa-save"></i> Guardar Alterações
-                    </button>
-                    
+
                 </div>
-            </div>
-        </div>
 
-    </form>
+        </form>
 
 
-</div>
+    </div>
+}   
 
