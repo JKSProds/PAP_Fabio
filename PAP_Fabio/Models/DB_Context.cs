@@ -154,7 +154,6 @@ namespace PAP_Fabio.Models
                         tipo = result["tipo"],
                     };
                 }
-                    
             }
 
             return res;
@@ -184,7 +183,6 @@ namespace PAP_Fabio.Models
 
             while (result.Read())
             {
-
                 util = new Utilizador()
                 {
                     ID = result["id_user"],
@@ -199,7 +197,7 @@ namespace PAP_Fabio.Models
             db.Connection.Close();         
 
             return util;
-        }
 
+        }
     }
 }

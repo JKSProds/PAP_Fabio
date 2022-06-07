@@ -13,7 +13,7 @@
                 <p>&nbsp</p>
             </div>
             <div class="input-group col-md-8">
-                <input type="text" style="height: auto" class="form-control" placeholder="Filtro" id="txtFiltro" name="filter" value="@ViewData["filter"]" aria-describedby="basic-addon2">
+                <input type="text" style="height: auto" class="form-control" placeholder="Pesquisar" id="txtFiltro" name="filter" value="@ViewData["filter"]" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                     <select class="form-control" id="lstarea" style="height: auto" onchange="filtrar()"
                             asp-items="@(new SelectList(@ViewBag.TipoUtilizador, "Value", "Text", @ViewData["tipo"]))">
