@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="PAP_Fabio/Models/DB_Context.cs">
     <Files>
       <File FileName="PAP_Fabio/Models/DB_Context.cs" Line="172" Column="1" />
-      <File FileName="PAP_Fabio/Controllers/UtilizadoresController.cs" Line="185" Column="1" />
-      <File FileName="PAP_Fabio/Views/Utilizadores/Index.cshtml" Line="47" Column="91" />
+      <File FileName="PAP_Fabio/Controllers/UtilizadoresController.cs" />
+      <File FileName="PAP_Fabio/Views/Utilizadores/Index.cshtml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

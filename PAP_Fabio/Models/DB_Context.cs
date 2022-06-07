@@ -168,7 +168,7 @@ namespace PAP_Fabio.Models
         public void ApagarUser(Utilizador util)
         {
             Database db = ConnectionString;
-            String sql = "Delete from utilizadores where id_user" + util.ID + "and nome='" + util.Nome + "';";
+            String sql = "Delete from utilizadores where id_user" + util.ID + "';";
             db.Execute(sql);
             db.Connection.Close();
         }

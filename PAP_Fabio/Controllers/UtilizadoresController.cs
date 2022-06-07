@@ -181,7 +181,7 @@ namespace PAP_Fabio.Controllers
             {
                 DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
                 context.ApagarUser(context.ObterUtilizador(Id));
-                context.AdicionarLog(context.ObterUtilizador(int.Parse(this.User.Claims.First().Value)).NomeUtilizador, "Foi apagado o utilizador " + Id, 1);
+                //context.AdicionarLog(context.ObterUtilizador(int.Parse(this.User.Claims.First().Value)).NomeUtilizador, "Foi apagado o utilizador " + Id, 1);
 
                 return RedirectToAction(nameof(Index));
             }
