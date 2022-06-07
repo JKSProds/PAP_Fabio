@@ -1,20 +1,19 @@
 ﻿<Properties StartupConfiguration="{8F75B4B0-D1A3-41E7-8D9D-E9310651FFA1}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="PAP_Fabio/Controllers/UtilizadoresController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PAP_Fabio/Models/DB_Context.cs">
     <Files>
-      <File FileName="PAP_Fabio/Models/DB_Context.cs" Line="157" Column="21" />
-      <File FileName="PAP_Fabio/Controllers/UtilizadoresController.cs" Line="192" Column="1" />
-      <File FileName="PAP_Fabio/Views/Utilizadores/Index.cshtml" Line="40" Column="17" />
-      <File FileName="PAP_Fabio/Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="PAP_Fabio/Models/DB_Context.cs" Line="158" Column="1" />
+      <File FileName="PAP_Fabio/Controllers/UtilizadoresController.cs" Line="20" Column="1" />
+      <File FileName="PAP_Fabio/Views/Utilizadores/Index.cshtml" Line="47" Column="88" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PAP_Fabio" expanded="True">
             <Node name="PAP_Fabio" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="UtilizadoresController.cs" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="DB_Context.cs" selected="True" />
               </Node>
-              <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />

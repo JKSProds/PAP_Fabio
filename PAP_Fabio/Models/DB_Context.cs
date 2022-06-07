@@ -165,6 +165,7 @@ namespace PAP_Fabio.Models
             throw new NotImplementedException();
         }
 
+
         public void ApagarUser(Utilizador util)
         {
             Database db = ConnectionString;
@@ -173,7 +174,8 @@ namespace PAP_Fabio.Models
             db.Connection.Close();
         }
 
-        public Utilizador ObterUtil( int idutil)
+
+        public Utilizador ObterUtil(int idutil)
         {
             Utilizador util = new Utilizador();
             Database db = ConnectionString;
@@ -194,9 +196,7 @@ namespace PAP_Fabio.Models
                     codigoAluno = result["codigoAluno"]
                 };
             }
-            db.Connection.Close();
-
-            
+            db.Connection.Close();         
 
             return util;
         }
