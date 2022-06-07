@@ -159,7 +159,7 @@ namespace PAP_Fabio.Controllers
         {
             try
             {
-                DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context )) as DB_Context;
+                DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
                 editar.ID_Aluno = id;
                 context.Editar(editar);
                 context.Editar(context.ObterUtilizador(int.Parse(this.User.Claims.First().Value)).Nome, "Foi alterado o utilizador " + editar.ID_Aluno, 1);
@@ -179,9 +179,8 @@ namespace PAP_Fabio.Controllers
         {
             try
             {
-
                 DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
-                //context.userid(context.ObterProduto(Id, userid));
+                context.ApagarUser(context.ObterUtilizador(Id));
                 //context.userid(context.ObterUtilizador(int.Parse(this.User.Claims.First().Value)).NomeUtilizador, "Foi apagado o utilizador " + Id, 1);
 
                 return RedirectToAction(nameof(Index));
@@ -190,8 +189,7 @@ namespace PAP_Fabio.Controllers
             {
                 return View();
             }
-        }
 
+        }
     }
-            
 }

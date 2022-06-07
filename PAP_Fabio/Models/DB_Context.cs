@@ -154,7 +154,7 @@ namespace PAP_Fabio.Models
                         tipo = result["tipo"],
                     };
                 }
-
+                    
             }
 
             return res;
@@ -163,6 +163,42 @@ namespace PAP_Fabio.Models
         internal void Editar(Editar editar)
         {
             throw new NotImplementedException();
+        }
+
+        public void ApagarUser(Utilizador util)
+        {
+            Database db = ConnectionString;
+            String sql = "Delete from utilizadores where id_user" + util.ID + "and nome='" + util.Nome + "';";
+            db.Execute(sql);
+            db.Connection.Close();
+        }
+
+        public Utilizador ObterUtil( int idutil)
+        {
+            Utilizador util = new Utilizador();
+            Database db = ConnectionString;
+
+            var result = db.Query("SELECT * FROM utilizadores where id_user ='" + idutil + "';");
+
+            while (result.Read())
+            {
+
+                util = new Utilizador()
+                {
+                    ID = result["id_user"],
+                    Nome = result["nome"],
+                    Email = result["email"],
+                    Pass = result["pass"],
+                    tipo = result["tipo"],
+                    admin = result["admin"] == "1",
+                    codigoAluno = result["codigoAluno"]
+                };
+            }
+            db.Connection.Close();
+
+            
+
+            return util;
         }
 
     }

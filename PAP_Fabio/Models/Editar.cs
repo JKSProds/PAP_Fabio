@@ -10,8 +10,10 @@ namespace PAP_Fabio.Models
     {
         [Display(Name = "Código")]
         public string ID_Aluno { get; set; }
+
         [Display(Name = "Nome")]
         public string Nome_Aluno { get; set; }
+
         [Display(Name = "Email")]
         public string Email_Aluno { get; set; }
     }
