@@ -150,7 +150,6 @@ namespace PAP_Fabio.Controllers
         {
             return View();
         }
-
        
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -162,7 +161,7 @@ namespace PAP_Fabio.Controllers
                 DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
                 editar.ID_Aluno = id;
                 context.Editar(editar);
-                context.Editar(context.ObterUtilizador(int.Parse(this.User.Claims.First().Value)).Nome, "Foi alterado o utilizador " + editar.ID_Aluno, 1);
+                //ontext.Editar(context.ObterUtilizador(int.Parse(this.User.Claims.First().Value)).Nome, "Foi alterado o utilizador " + editar.ID_Aluno, 1);
 
                 return Redirect("~/Utilizadores/Editar/");
             }
@@ -170,9 +169,8 @@ namespace PAP_Fabio.Controllers
             {
                 return View();
             }
-        }
+        }       
 
-        
         [HttpPost]
         [Authorize(Roles = "Admin")]
         public ActionResult Apagar(string Id, int userid)
@@ -181,7 +179,7 @@ namespace PAP_Fabio.Controllers
             {
                 DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
                 context.ApagarUser(context.ObterUtilizador(Id));
-                //context.AdicionarLog(context.ObterUtilizador(int.Parse(this.User.Claims.First().Value)).NomeUtilizador, "Foi apagado o utilizador " + Id, 1);
+                //context.ObterUtilizador(context.ObterUtilizador(int.Parse(this.User.Claims.First().Value)).Nome, "Foi apagado o utilizador " + Id, 1);
 
                 return RedirectToAction(nameof(Index));
             }

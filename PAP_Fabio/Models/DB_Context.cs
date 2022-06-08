@@ -135,7 +135,7 @@ namespace PAP_Fabio.Models
         }
 
 
-        public Utilizador Editar(string nome, string v, int ID)
+        public Utilizador Editar(int ID)
         {
             Utilizador res = new Utilizador();
 
@@ -159,20 +159,26 @@ namespace PAP_Fabio.Models
             return res;
         }
 
+        public void EditarUtil(Utilizador util)
+        {
+            Database db = ConnectionString;
+            String sql = "UPDATE utilizadores set nome='" + util.Nome + "', email='" + util.Email + "';";
+            db.Execute(sql);
+            db.Connection.Close();
+        }   
+
         internal void Editar(Editar editar)
         {
             throw new NotImplementedException();
         }
 
-
         public void ApagarUser(Utilizador util)
         {
             Database db = ConnectionString;
-            String sql = "Delete from utilizadores where id_user" + util.ID + "';";
+            String sql = "Delete * from utilizadores where id_user" + util.ID + "';";
             db.Execute(sql);
             db.Connection.Close();
         }
-
 
         public Utilizador ObterUtil(int idutil)
         {
@@ -194,6 +200,7 @@ namespace PAP_Fabio.Models
                     codigoAluno = result["codigoAluno"]
                 };
             }
+
             db.Connection.Close();         
 
             return util;

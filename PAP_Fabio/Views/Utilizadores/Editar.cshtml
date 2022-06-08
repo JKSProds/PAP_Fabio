@@ -1,59 +1,56 @@
 ﻿@model PAP_Fabio.Models.Editar
-
 @{
     ViewData["Title"] = "Editar Utilizador";
 }
 
+<div class="text-center">
 
-    <div class="text-center">
+    <p>&nbsp</p>
+    <form asp-action="Editar">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="container">
 
-        
-        <p>&nbsp</p>
-        <form asp-action="Editar">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="container">
-                
-                <div class="row col-12">
-                    
-                    <div class="col-12 row">
+            <div class="row col-12">
 
-                        <h1>Editar @this.User.Claims.Where(c => c.Type.Contains("givenname")).First().Value </h1>
+                <div class="col-12 row">
 
+                    <h1>Editar @this.User.Claims.Where(c => c.Type.Contains("givenname")).First().Value </h1>
 
-                        <div class="form-group col-6">
-                            <label asp-for="ID_Aluno" class="control-label"></label>
-                            <input asp-for="ID_Aluno" class="form-control" readonly />
-                            <span asp-validation-for="ID_Aluno" class="text-danger"></span>
-                        </div>
-                        <div class="form-group col-6">
-                            <label asp-for="Nome_Aluno" class="control-label"></label>
-                            <input asp-for="Nome_Aluno" class="form-control" />
-                            <span asp-validation-for="Nome_Aluno" class="text-danger"></span>
-                        </div>
-                        <div class="form-group col-12">
-                            <label asp-for="Email_Aluno" class="control-label"></label>
-                            <input asp-for="Email_Aluno" class="form-control" />
-                            <span asp-validation-for="Email_Aluno" class="text-danger"></span>
-                        </div>
+                    <div class="form-group col-6">
+                        <label asp-for="ID_Aluno" class="control-label"></label>
+                        <input asp-for="ID_Aluno" class="form-control" readonly />
+                        <span asp-validation-for="ID_Aluno" class="text-danger"></span>
+                    </div>
 
-                        <div class="form-group col-12">
-                            <button type="submit" class="btn btn-primary btn-lg btn-block" style="background-color: #236954;">
-                                <i class="fas fa-save"></i> Guardar Alterações
-                            </button>
-                        </div>
+                    <div class="form-group col-6">
+                        <label asp-for="Nome_Aluno" class="control-label"></label>
+                        <input asp-for="Nome_Aluno" class="form-control" />
+                        <span asp-validation-for="Nome_Aluno" class="text-danger"></span>
+                    </div>
 
+                    <div class="form-group col-12">
+                        <label asp-for="Email_Aluno" class="control-label"></label>
+                        <input asp-for="Email_Aluno" class="form-control" />
+                        <span asp-validation-for="Email_Aluno" class="text-danger"></span>
+                    </div>
 
+                    <div class="form-group col-12">
+
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" style="background-color: #236954;">
+                            <i class="fas fa-save"></i> Guardar Alterações
+                        </button>
 
 
                     </div>
 
                 </div>
 
-                </div>
+            </div>
 
-        </form>
+        </div>
 
+    </form>
 
-    </div>
+</div>
 
 
