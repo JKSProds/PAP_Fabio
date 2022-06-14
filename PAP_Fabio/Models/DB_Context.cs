@@ -159,26 +159,53 @@ namespace PAP_Fabio.Models
             return res;
         }
 
+        /*public Utilizador Novo(int ID)
+        {
+            Utilizador res = new Utilizador();
+
+            using (Database db = ConnectionString)
+            {
+                using var result = db.Query("INSERT INTO utilizadores where id_user ='" + ID + "';");
+                result.Read();
+                if (result.Reader.HasRows)
+                {
+                    res = new Utilizador()
+                    {
+                        ID = result["id_user"],
+                        Nome = result["nome"],
+                        Email = result["email"],
+                        Pass = result["pass"],
+                        tipo = result["tipo"],
+                    };
+                }
+            }
+
+            return res;
+        }*/
+
         public void EditarUtil(Utilizador util)
         {
             Database db = ConnectionString;
-            String sql = "UPDATE utilizadores set nome='" + util.Nome + "', email='" + util.Email + "';";
+            String sql = "UPDATE utilizadores set nome='" + util.Nome + "', email='" + util.Email + "', admin='" + (util.admin ? 1 : 0) + "' where id_user='" + util.ID+"';";
+            db.Execute(sql);
+            db.Connection.Close();
+        }
+
+        public void NovoUtil(Utilizador util)
+        {
+            Database db = ConnectionString;
+            String sql = "INSERT INTO utilizadores (id_user, email, pass, nome, admin, tipo, codigoAluno) values (" + util.ID + ", '" + util.Email + "','" + util.Pass + "', '" + util.Nome + "', " + (util.admin ? 1 : 0) + ", " + util.tipo + ", '" + util.codigoAluno + "');";
+            db.Execute(sql);
+            db.Connection.Close();
+        }
+
+        public void ApagarUser(string id)
+        {
+            Database db = ConnectionString;
+            String sql = "Delete from utilizadores where id_user='" + id + "';";
             db.Execute(sql);
             db.Connection.Close();
         }   
-
-        internal void Editar(Editar editar)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ApagarUser(Utilizador util)
-        {
-            Database db = ConnectionString;
-            String sql = "Delete * from utilizadores where id_user" + util.ID + "';";
-            db.Execute(sql);
-            db.Connection.Close();
-        }
 
         public Utilizador ObterUtil(int idutil)
         {

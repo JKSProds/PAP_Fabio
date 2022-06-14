@@ -78,7 +78,6 @@ namespace PAP_Fabio.Controllers
 
             }
 
-
             var passwordHasher = new PasswordHasher<string>();
             if (passwordHasher.VerifyHashedPassword(null, utilizador.Pass, utilizador_req.Pass) == PasswordVerificationResult.Success)
             {
@@ -88,8 +87,8 @@ namespace PAP_Fabio.Controllers
                         new Claim(ClaimTypes.GivenName, utilizador.Nome),
                         new Claim(ClaimTypes.Role, utilizador.admin ? "Admin" : "User"),
                         new Claim(ClaimTypes.Role, utilizador.tipo == 1 ? "Professor" : utilizador.tipo == 2 ? "Funcionario" : "Aluno")
-
                     };
+
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
 
@@ -101,7 +100,6 @@ namespace PAP_Fabio.Controllers
                 {
                     return RedirectToAction("Index", "Home");
                 }
-
             }
 
             else
@@ -120,11 +118,11 @@ namespace PAP_Fabio.Controllers
 
         [Authorize(Roles = "Admin")]
 
-        public IActionResult Index(string filter, int? tipo, int? page)
+        public IActionResult Index(string filter, string tipo, int? page)
         {
             
             DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
-
+            int tipoUser = 3;
             //int pageSize = 50;
             var pageNumber = page ?? 1;
 
@@ -133,61 +131,78 @@ namespace PAP_Fabio.Controllers
             ViewBag.TipoUtilizador = LstTipo.Select(l => new SelectListItem() { Value = l, Text = l });
 
             if (filter == null) { filter = ""; }
-            if (tipo == null) { tipo = 3; }
+            if (tipo == null) { tipo = "Aluno"; }
 
             ViewData["filter"] = filter;
             ViewData["tipo"] = tipo;
 
-            return View(context.ObterUtilizadores(tipo).Where(c => c.Nome.Contains(filter)));
+            if (tipo == "Aluno") tipoUser = 3;
+            if (tipo == "Professor") tipoUser = 1;
+            if (tipo == "Funcionário") tipoUser = 2;
+
+            return View(context.ObterUtilizadores(tipoUser).Where(c => c.Nome.Contains(filter)));
         }
 
-        public IActionResult Editar()
+        public IActionResult Editar(string id)
         {
-            return View();
+            DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
+            int id_user = 0;
+            int.TryParse(id, out id_user);
+
+            return View(context.ObterUtil(id_user));
         }
-     
+
+        [HttpPost]
+        public IActionResult Editar(Utilizador utilizador)
+        {
+            DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
+
+            context.EditarUtil(utilizador);
+
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Novo(string id)
+        {
+            DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
+            int id_user = 0;
+            int.TryParse(id, out id_user);
+
+            return View(context.ObterUtil(id_user));
+        }
+
+        [HttpPost]
+        public IActionResult Novo(Utilizador utilizador)
+        {
+            DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
+       
+
+            context.NovoUtil(utilizador);
+
+            return RedirectToAction("Index");
+        }
+
         public IActionResult AcessoNegado()
         {
             return View();
-        }
-       
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        }     
+
         [Authorize(Roles = "Admin")]
-        public ActionResult Editar(string id, Editar editar)
+        public ActionResult Apagar(string id)
         {
             try
             {
                 DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
-                editar.ID_Aluno = id;
-                context.Editar(editar);
-                //ontext.Editar(context.ObterUtilizador(int.Parse(this.User.Claims.First().Value)).Nome, "Foi alterado o utilizador " + editar.ID_Aluno, 1);
-
-                return Redirect("~/Utilizadores/Editar/");
-            }
-            catch
-            {
-                return View();
-            }
-        }       
-
-        [HttpPost]
-        [Authorize(Roles = "Admin")]
-        public ActionResult Apagar(string Id, int userid)
-        {
-            try
-            {
-                DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
-                context.ApagarUser(context.ObterUtilizador(Id));
+                context.ApagarUser(id);
                 //context.ObterUtilizador(context.ObterUtilizador(int.Parse(this.User.Claims.First().Value)).Nome, "Foi apagado o utilizador " + Id, 1);
 
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return RedirectToAction("Index");
             }
-
         }
+
     }
 }   
