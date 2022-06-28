@@ -1,0 +1,91 @@
+﻿@model IEnumerable<PAP_Fabio.Models.Acessos>
+
+@{
+    ViewData["Title"] = "Lista de Acessos";
+}
+
+<p>&nbsp</p>
+
+<div class="text-center">
+    <div class="row">
+        <div class="col-md-12 page-header">
+            <h4>Acessos de @ViewData["nome"]</h4>
+            <p>&nbsp</p>
+        </div>
+
+    </div>
+
+</div>
+<p>&nbsp</p>
+
+
+
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Data</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Data.ToString("dd/MM/yyyy HH:mm:ss")</td>
+            <td>
+
+                <button type="button" onclick="ConfirmarApagar(@item.ID)" class="btn btn-outline-danger btn-lg" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fas fa-trash float-left" style="margin-top:5px" data-toggle="modal" data-target="#exampleModal"></i>
+                </button>
+
+            </td>
+        </tr>
+
+    }
+</table>
+
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Apagar acesso</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Tem a certeza que deseja apagar este acesso?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" onclick="ApagarAcesso()" class="btn btn-primary">Apagar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="text" id="id_acesso" hidden>
+
+<script>function filtro() {
+        var filter = document.getElementById("txtFiltro").value;
+        var tipo = document.getElementById("lsttipo").value;
+
+        window.location.href = "/Utilizadores?filter=" + filter + "&tipo=" + tipo;
+    }
+
+    function ApagarAcesso() {
+        $.ajax({
+            type: "POST",
+            url: "/Acessos/Apagar/" + document.getElementById("id_acesso").value,
+            traditional: true,
+            success: function (result) {
+                $(function () {
+                    window.location.reload();
+                });
+            }
+        });
+
+    }
+    function ConfirmarApagar(id) {
+        document.getElementById("id_acesso").value = id;
+    }</script>

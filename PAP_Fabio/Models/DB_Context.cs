@@ -159,7 +159,55 @@ namespace PAP_Fabio.Models
             return res;
         }
 
-        /*public Utilizador Novo(int ID)
+        public Utilizador Apagar(int ID)
+        {
+            Utilizador res = new Utilizador();
+
+            using (Database db = ConnectionString)
+            {
+                using var result = db.Query("Delete from utilizadores where id_user='" + ID + "';");
+                result.Read();
+                if (result.Reader.HasRows)
+                {
+                    res = new Utilizador()
+                    {
+                        ID = result["id_user"],
+                        Nome = result["nome"],
+                        Email = result["email"],
+                        Pass = result["pass"],
+                        tipo = result["tipo"],
+                        admin = result["admin"] == "1",
+                        codigoAluno = result["codigoAluno"]
+                    };
+                }
+            }
+
+            return res;
+        }
+
+        /*public Acessos ApagarAcess(int ID)
+        {
+            Acessos res = new Acessos();
+
+            using (Database db = ConnectionString)
+            {
+                using var result = db.Query("Delete from acessos where id_acesso='" + ID + "';");
+                result.Read();
+                if (result.Reader.HasRows)
+                {
+                    res = new Acessos()
+                    {
+                        ID = result["id_acesso"],
+                        ID_User = result["id_user"],
+                        Data = result["data"],
+                    };
+                }
+            }
+
+            return res;
+        }*/
+
+        public Utilizador Novo(int ID)
         {
             Utilizador res = new Utilizador();
 
@@ -181,7 +229,7 @@ namespace PAP_Fabio.Models
             }
 
             return res;
-        }*/
+        }
 
         public void EditarUtil(Utilizador util)
         {
@@ -205,7 +253,32 @@ namespace PAP_Fabio.Models
             String sql = "Delete from utilizadores where id_user='" + id + "';";
             db.Execute(sql);
             db.Connection.Close();
-        }   
+        }
+
+        public void ApagarCompras(string id)
+        {
+            Database db = ConnectionString;
+            String sql = "Delete from Compras where id_compra='" + id + "';";
+            db.Execute(sql);
+            db.Connection.Close();
+        }
+
+        public void ApagarBar(string id)
+        {
+            Database db = ConnectionString;
+            String sql = "Delete from compras_bar where id_compra_bar='" + id + "';";
+            db.Execute(sql);
+            db.Connection.Close();
+        }
+
+
+        public void ApagarAcessos(string id)
+        {
+            Database db = ConnectionString;
+            String sql = "Delete from acessos where id_acesso='" + id + "';";
+            db.Execute(sql);
+            db.Connection.Close();
+        }
 
         public Utilizador ObterUtil(int idutil)
         {
@@ -231,7 +304,127 @@ namespace PAP_Fabio.Models
             db.Connection.Close();         
 
             return util;
+        }
+
+        public List<Compras> ObterComprasTeste()
+        {
+            List<Compras> LstCompras = new List<Compras>();
+
+            using (Database db = ConnectionString)
+            {
+                using var result = db.Query("SELECT * FROM Compras where tipo=3;");
+                while (result.Read())
+                {
+                    LstCompras.Add(new Compras()
+                    {
+                        ID = result["id_compra"],
+                        NomeProd = result["nome_prod"],
+                    });
+                }
+            }
+
+            return LstCompras;
+        }
+
+        public List<Compras> ObterCompras(int ID)
+        {
+            List<Compras> res = new List<Compras>();
+            Database db = ConnectionString;
+
+            var result = db.Query("SELECT * FROM Compras where id_user ='" + ID + "';");
+
+            while (result.Read())
+            {
+                res.Add(new Compras()
+                {
+                    ID = result["id_compra"],
+                    Data = result["data_compra"],
+                    IDProd = result["id_produto"],
+                    NomeProd = result["nome_prod"],
+                    Quantidade = result["quantidade"],
+                    Preco = result["preco"],
+                    ID_User = result["id_user"],
+                });
+            }
+
+            db.Connection.Close();
+
+            return res;
 
         }
+        public List<Bar> ObterBar(int ID)
+        {
+            List<Bar> res = new List<Bar>();
+            Database db = ConnectionString;
+
+            var result = db.Query("SELECT * FROM compras_bar where id_user ='" + ID + "';");
+
+            while (result.Read())
+            {
+                res.Add(new Bar()
+                {
+                    ID = result["id_compra_bar"],
+                    Data = result["data_compra_bar"],
+                    IDProd = result["id_bar"],
+                    NomeProd = result["nome_bar"],
+                    Preco = result["preco"],
+                    ID_User = result["id_user"],
+                });
+            }
+
+            db.Connection.Close();
+
+            return res;
+
+        }
+
+        public List<Acessos> ObterAcessos(int ID)
+        {
+            List<Acessos> res = new List<Acessos>();
+            Database db = ConnectionString;
+
+            var result = db.Query("SELECT * FROM acessos where id_user ='" + ID + "';");
+
+            while (result.Read())
+            {
+                res.Add(new Acessos()
+                {
+                    ID = result["id_acesso"],
+                    ID_User = result["id_user"],
+                    Data = result["data"],
+                });
+            }
+
+            db.Connection.Close();
+
+            return res;
+
+        }
+
+        /*public Compras ObterCompras(int ID)
+        {
+            Compras res = new Compras();
+
+            using (Database db = ConnectionString)
+            {
+                using var result = db.Query("SELECT * FROM Compras where id_compra ='" + ID + "';");
+                result.Read();
+                if (result.Reader.HasRows)
+                {
+                    res = new Compras()
+                    {
+                        ID = result["id_compra"],
+                        Data = result["data_compra "],
+                        IDProd = result["id_prod"],
+                        NomeProd = result["nome_prod"],
+                        Quantidade = result["quantidade"],
+                        Preco = result["ºpreco"],
+                    };
+                }
+
+            }
+            return res;
+        }*/
+
     }
 }

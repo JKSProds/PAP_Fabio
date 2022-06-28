@@ -1,20 +1,23 @@
 ﻿<Properties StartupConfiguration="{8F75B4B0-D1A3-41E7-8D9D-E9310651FFA1}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="PAP_Fabio/Views/Utilizadores/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PAP_Fabio/Models/Compras.cs">
     <Files>
-      <File FileName="PAP_Fabio/Views/Utilizadores/Novo.cshtml" Line="88" Column="115" IsPinned="True" />
-      <File FileName="PAP_Fabio/Controllers/UtilizadoresController.cs" />
-      <File FileName="PAP_Fabio/Views/Utilizadores/Index.cshtml" Line="65" Column="58" />
-      <File FileName="PAP_Fabio/Views/Shared/_Layout.cshtml" />
-      <File FileName="PAP_Fabio/Models/Utilizador.cs" />
-      <File FileName="PAP_Fabio/Views/Utilizadores/Editar.cshtml" />
+      <File FileName="PAP_Fabio/Models/Bar.cs" Line="23" Column="6" />
+      <File FileName="PAP_Fabio/Controllers/Bar.cs" Line="14" Column="88" />
       <File FileName="PAP_Fabio/Models/DB_Context.cs" />
-      <File FileName="PAP_Fabio/Models/ErrorViewModel.cs" />
-      <File FileName="PAP_Fabio/Views/Home/Index.cshtml" />
-      <File FileName="PAP_Fabio/Program.cs" />
-      <File FileName="PAP_Fabio/Views/Utilizadores/Login.cshtml" />
+      <File FileName="PAP_Fabio/Views/Utilizadores/Index.cshtml" Line="28" Column="15" />
       <File FileName="PAP_Fabio/Controllers/HomeController.cs" />
-      <File FileName="PAP_Fabio/Views/Utilizadores/AcessoNegado.cshtml" />
-      <File FileName="PAP_Fabio/Views/_ViewImports.cshtml" />
+      <File FileName="PAP_Fabio/Models/Acessos.cs" />
+      <File FileName="PAP_Fabio/Controllers/UtilizadoresController.cs" Line="140" Column="53" />
+      <File FileName="PAP_Fabio/Controllers/Acessos.cs" />
+      <File FileName="PAP_Fabio/Views/Bar/ListaBar.cshtml" Line="8" Column="1" />
+      <File FileName="PAP_Fabio/Views/Utilizadores/Editar.cshtml" Line="21" Column="42" />
+      <File FileName="PAP_Fabio/Views/Utilizadores/Novo.cshtml" Line="63" Column="67" />
+      <File FileName="PAP_Fabio/Startup.cs" Line="1" Column="1" />
+      <File FileName="PAP_Fabio/Views/Shared/_Layout.cshtml" Line="88" Column="58" />
+      <File FileName="PAP_Fabio/Models/Utilizador.cs" Line="1" Column="1" />
+      <File FileName="PAP_Fabio/Views/Acessos/ListaAcessos.cshtml" Line="7" Column="13" />
+      <File FileName="PAP_Fabio/Views/Compras/ListaCompras.cshtml" Line="46" Column="32" />
+      <File FileName="PAP_Fabio/Models/Compras.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,23 +25,17 @@
           <Node name="PAP_Fabio" expanded="True">
             <Node name="PAP_Fabio" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Compras.cs" selected="True" />
+              </Node>
               <Node name="Properties" expanded="True" />
               <Node name="Views" expanded="True">
+                <Node name="Acessos" expanded="True" />
+                <Node name="Bar" expanded="True" />
+                <Node name="Compras" expanded="True" />
                 <Node name="Home" expanded="True" />
                 <Node name="Shared" expanded="True" />
-                <Node name="Utilizadores" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
-              </Node>
-              <Node name="wwwroot" expanded="True">
-                <Node name="css" expanded="True" />
-                <Node name="img" expanded="True" />
-                <Node name="js" expanded="True" />
-                <Node name="lib" expanded="True">
-                  <Node name="bootstrap" expanded="True" />
-                  <Node name="jquery" expanded="True" />
-                </Node>
+                <Node name="Utilizadores" expanded="True" />
               </Node>
               <Node name="appsettings.json" expanded="True" />
             </Node>

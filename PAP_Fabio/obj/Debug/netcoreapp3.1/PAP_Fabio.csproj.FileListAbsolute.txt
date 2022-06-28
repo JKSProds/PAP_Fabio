@@ -145,3 +145,6 @@ C:/Users/jmonteiro/source/repos/PAP_Fabio/PAP_Fabio/obj/Debug/netcoreapp3.1/PAP_
 /Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/obj/Debug/netcoreapp3.1/Razor/Views/Utilizadores/AcessoNegado.cshtml.g.cs
 /Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/obj/Debug/netcoreapp3.1/Razor/Views/Utilizadores/Editar.cshtml.g.cs
 /Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/obj/Debug/netcoreapp3.1/Razor/Views/Utilizadores/Novo.cshtml.g.cs
+/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/obj/Debug/netcoreapp3.1/Razor/Views/Compras/ListaCompras.cshtml.g.cs
+/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/obj/Debug/netcoreapp3.1/Razor/Views/Acessos/ListaAcessos.cshtml.g.cs
+/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/obj/Debug/netcoreapp3.1/Razor/Views/Bar/ListaBar.cshtml.g.cs

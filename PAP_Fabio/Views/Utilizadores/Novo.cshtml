@@ -12,91 +12,93 @@
 
             <div class="row col-12">
 
-                <div class="col-12 row">
+                <h1>Novo Utilizador</h1>
 
-                    <h1>Novo Utilizador</h1>
+                <p>&nbsp</p>
 
-                    <input asp-for="ID" class="form-control" type="hidden" readonly />
+                <input asp-for="ID" class="form-control" type="hidden" readonly />
 
-                    <div class="form-group col-6">
-                        <label asp-for="codigoAluno" class="control-label"></label>
-                        <input asp-for="codigoAluno" class="form-control" />
-                        <span asp-validation-for="codigoAluno" class="text-danger"></span>
-                    </div>
+                <div class="form-group col-12">
+                    <label asp-for="codigoAluno" class="control-label">Código Aluno</label>
+                    <input asp-for="codigoAluno" class="form-control" required/>
+                    <span asp-validation-for="codigoAluno" class="text-danger"></span>
+                </div>
 
-                    <div class="form-group col-6">
-                        <label asp-for="Nome" class="control-label"></label>
-                        <input asp-for="Nome" class="form-control" />
-                        <span asp-validation-for="Nome" class="text-danger"></span>
-                    </div>
+                <div class="form-group col-12">
+                    <label asp-for="Nome" class="control-label"></label>
+                    <input asp-for="Nome" class="form-control" required/>
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
 
-                    <div class="form-group col-6">
-                        <label asp-for="Email" class="control-label"></label>
-                        <input asp-for="Email" type="email" class="form-control" />
-                        <span asp-validation-for="Email" class="text-danger"></span>
-                    </div>
+                <div class="form-group col-12">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" type="email" class="form-control" required/>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
 
-                    <!--<div class="form-group col-6">
+                <!--<div class="form-group col-6">
         <label asp-for="Pass" class="control-label"></label>
         <input type="text" asp-for="Pass" id="password" class="form-control" />
         <span asp-validation-for="Pass" class="text-danger"></span>
     </div>-->
 
-                    <div class="form-group col-6">
-                        <label asp-for="Pass" class="control-label"></label>
-                        <input asp-for="Pass" class="form-control" />
-                        <span asp-validation-for="Pass" class="text-danger"></span>
-                    </div>
+                <div class="form-group col-12">
+                    <label asp-for="Pass" class="control-label">Password</label>
+                    <input asp-for="Pass" type="password" class="form-control" required/>
+                    <span asp-validation-for="Pass" class="text-danger"></span>
+                </div>
 
-                    <div class="form-group col-6">
-                        <label asp-for="tipo" class="control-label"></label>
-                        <select asp-for="tipo" class="form-control">
-                            <option></option>
-                            <option value="1">Professor</option>
-                            <option value="2">Funcionário</option>
-                            <option value="3">Aluno</option>
-                        </select>
-                    </div>
+                <div class="form-group col-12">
+                    <label asp-for="tipo" class="control-label">Função</label>
+                    <select asp-for="tipo" class="form-control" required>
+                        <option></option>
+                        <option value="1">Professor</option>
+                        <option value="2">Funcionário</option>
+                        <option value="3">Aluno</option>
+                    </select>
+                </div>
 
-                    <div class="form-group col-12">
-                        <input type="checkbox" asp-for="admin" class="form-control">
-                        <label asp-for="admin"> Admin </label><br>
-                        <span asp-validation-for="admin" class="text-danger"></span>
-                    </div>
+                <div class="form-group col-12">
+                    <input type="checkbox" asp-for="admin" class="form-control">
+                    <label asp-for="admin"> Administrador </label><br>
+                    <span asp-validation-for="admin" class="text-danger"></span>
+                </div>
 
-                    <div class="form-group col-12">
+                <div class="form-group col-12">
 
-                        <!-- Button trigger modal -->
-                        <button type="submit" class="btn btn-primary btn-lg btn-block" style="background-color: #236954;" data-toggle="modal" data-target="#exampleModal">
-                            i class="fas fa-save"></i> Criar Novo Utilizador
-                        </button>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        ...
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Criar</button>
-                                        <button type="button" class="btn btn-primary">Guardar</button>
-                                    </div>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: #236954;" data-toggle="modal" data-target="#exampleModal">
+                        <i class="fas fa-save"></i> Criar Novo Utilizador
+                    </button>
+
+                    
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Criar Utilizador</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Tem a certeza que deseja criar este utilizador?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                    <button type="submit" href='Utilizadores/Criar/' class="btn btn-primary">Criar</button>
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
                 </div>
 
-                </div>
+            </div>
+
+               
 
         </div>
 

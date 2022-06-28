@@ -65,7 +65,7 @@ namespace PAP_Fabio.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(Utilizador utilizador_req, string ReturnUrl)
         {
-            if (User.Identity.IsAuthenticated) return RedirectToAction("Index", "Home");
+            if(User.Identity.IsAuthenticated) return RedirectToAction("Index", "Home");
 
             DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
 
@@ -75,7 +75,6 @@ namespace PAP_Fabio.Controllers
             {
                 ModelState.AddModelError("", "Não foram encontrados utlizadores com esse email!");
                 return View();
-
             }
 
             var passwordHasher = new PasswordHasher<string>();
@@ -133,8 +132,8 @@ namespace PAP_Fabio.Controllers
             if (filter == null) { filter = ""; }
             if (tipo == null) { tipo = "Aluno"; }
 
-            ViewData["filter"] = filter;
-            ViewData["tipo"] = tipo;
+                ViewData["filter"] = filter;
+                ViewData["tipo"] = tipo;
 
             if (tipo == "Aluno") tipoUser = 3;
             if (tipo == "Professor") tipoUser = 1;
@@ -142,7 +141,7 @@ namespace PAP_Fabio.Controllers
 
             return View(context.ObterUtilizadores(tipoUser).Where(c => c.Nome.Contains(filter)));
         }
-
+        
         public IActionResult Editar(string id)
         {
             DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
@@ -150,6 +149,11 @@ namespace PAP_Fabio.Controllers
             int.TryParse(id, out id_user);
 
             return View(context.ObterUtil(id_user));
+        }
+
+        public IActionResult AcessoNegado()
+        {
+            return View();
         }
 
         [HttpPost]
@@ -176,28 +180,43 @@ namespace PAP_Fabio.Controllers
         {
             DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
        
-
             context.NovoUtil(utilizador);
 
             return RedirectToAction("Index");
         }
-
-        public IActionResult AcessoNegado()
-        {
-            return View();
-        }     
-
+      
         [Authorize(Roles = "Admin")]
+
+        /*public IActionResult Apagar(string id)
+        {
+            DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
+            int id_user = 0;
+            int.TryParse(id, out id_user);
+
+            return View(context.ObterUtil(id_user));
+        }
+
+        [HttpPost]
+        public IActionResult Apagar(Utilizador utilizador)
+        {
+            DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
+
+            context.ApagarUser(utilizador);
+
+            return RedirectToAction("Index");
+        }
+        */
+
         public ActionResult Apagar(string id)
         {
             try
             {
                 DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
                 context.ApagarUser(id);
-                //context.ObterUtilizador(context.ObterUtilizador(int.Parse(this.User.Claims.First().Value)).Nome, "Foi apagado o utilizador " + Id, 1);
 
                 return RedirectToAction("Index");
             }
+
             catch
             {
                 return RedirectToAction("Index");

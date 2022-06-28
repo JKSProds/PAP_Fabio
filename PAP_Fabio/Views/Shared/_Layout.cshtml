@@ -1,12 +1,13 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 
 <style>
     .logo {
-        padding-right: 50px;
+        padding-right: 30px;
     }
 </style>
 
-<html lang="en">
+<html lang="pt-pt">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,8 +16,8 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/v4-shims.css">
-
 </head>
+
 
 <body>
     <header>
@@ -30,33 +31,50 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav flex-grow-1"style="padding-right:15px">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Utilizadores" asp-action="Index">Painel</a>
                         </li>
-
-                        <!--<li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Utilizadores" asp-action="QR">Código QR</a>
-                        </li>-->
-
                     </ul>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <ul class="navbar-nav flex-grow-1"style="padding-right:15px">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" onclick="window.location.href = '/Acessos/ListaAcessos/@int.Parse(this.User.Claims.First().Value)'">Acessos</a>
+                            </li>
+                        </ul>
+
+                        <ul class="navbar-nav flex-grow-1" style="padding-right:15px">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" onclick="window.location.href = '/Bar/ListaBar/@int.Parse(this.User.Claims.First().Value)'">Compras no Bar</a>
+                            </li>
+                        </ul>
+
+                        <ul class="navbar-nav flex-grow-1"style="padding-right:15px">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" onclick="window.location.href = '/Compras/ListaCompras/@int.Parse(this.User.Claims.First().Value)'">Compras Papelaria</a>
+                            </li>
+                        </ul>
+                    }
                 </div>
-                <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            @if (User.Identity.IsAuthenticated)
-                            {
-                                <a class="nav-link" href="~/Utilizadores/Logout"><i class="fas fa-sign-out-alt"></i> Terminar Sessão (@this.User.Claims.Where(c => c.Type.Contains("givenname")).First().Value)</a>
-                            }
-                            else
-                            {
-                                <a class="nav-link" href="~/Utilizadores/Login"><i class="fas fa-sign-in-alt"></i> Iniciar Sessão</a>
-                            }
-                        </li>
-                    </ul>
+
+                    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <a class="nav-link" href="~/Utilizadores/Logout"><i class="fas fa-sign-out-alt"></i> Terminar Sessão (@this.User.Claims.Where(c => c.Type.Contains("givenname")).First().Value)</a>
+                                }
+                                else
+                                {
+                                    <a class="nav-link" href="~/Utilizadores/Login"><i class="fas fa-sign-in-alt"></i> Iniciar Sessão</a>
+                                }
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
             </nav>
         </header>
         <div class="container">
@@ -66,8 +84,8 @@
         </div>
 
         <footer class="border-top footer text-muted">
-            <div class="container">
-                &copy; 2022 - PAP_Fabio - <a asp-area="" asp-controller="Home" asp-action="Privacidade">Todos Os Direitos Reservados</a>
+            <div class="text-center">
+                &copy; 2022 - PAP_Fabio - <a asp-action="">Todos Os Direitos Reservados</a>
             </div>
         </footer>
         <script src="~/lib/jquery/dist/jquery.min.js"></script>

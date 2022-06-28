@@ -12,11 +12,17 @@
   <ItemGroup>
     <None Remove="Views\Utilizadores\" />
     <None Remove="QRCoder" />
+    <None Remove="Views\Compras\" />
+    <None Remove="Views\Acessos\" />
+    <None Remove="Views\Compras - Bar\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\img\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\img\" />
+    <Folder Include="Views\Compras\" />
+    <Folder Include="Views\Acessos\" />
+    <Folder Include="Views\Bar\" />
   </ItemGroup>
 </Project>
