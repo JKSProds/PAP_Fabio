@@ -33,7 +33,7 @@ namespace PAP_Fabio
             //var passwordHasher = new PasswordHasher<string>();
             //Console.WriteLine(passwordHasher.HashPassword(null, "123456"));
 
-            services.Add(new ServiceDescriptor(typeof(DB_Context), new DB_Context("server=localhost;port=8889;user=root;password=root;database=pap_fabio;SslMode=none")));
+            services.Add(new ServiceDescriptor(typeof(DB_Context), new DB_Context("server=172.17.0.4;port=3306;user=dev;password=PAP_Fabio@2022!;database=pap_fabio;SslMode=none")));
 
             services.Configure<CookiePolicyOptions>(options =>
             {

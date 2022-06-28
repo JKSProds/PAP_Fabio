@@ -7253,7 +7253,7 @@
       "outputPath": "/Users/fabio_oliveira_010/Documents/dev/PAP_Fabio/PAP_Fabio/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/fabio_oliveira_010/.nuget/NuGet/NuGet.Config"
+        "/Users/fabio_oliveira_010/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
