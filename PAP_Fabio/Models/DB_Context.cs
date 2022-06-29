@@ -297,6 +297,7 @@ namespace PAP_Fabio.Models
             db.Connection.Close();
         }
 
+       
         public void ApagarUser(string id)
         {
             Database db = ConnectionString;

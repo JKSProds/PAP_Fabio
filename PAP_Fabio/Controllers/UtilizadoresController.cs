@@ -175,17 +175,18 @@ namespace PAP_Fabio.Controllers
         }
 
         [HttpPost]
-        public IActionResult Novo(Utilizador utilizador, string email)
+        public IActionResult Novo(Utilizador utilizador)
         {
             DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
 
-            if(context.ExisteEmailDuplicado(email))
+            if(context.ExisteEmailDuplicado(utilizador.Email))
             {
                 ModelState.AddModelError("", "Já existe um utilizador com esse email!");
             }
             else { context.NovoUtil(utilizador); }
 
             return RedirectToAction("Index");
+
         }
       
         [Authorize(Roles = "Admin")]
