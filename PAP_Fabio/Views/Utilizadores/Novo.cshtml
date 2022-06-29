@@ -19,7 +19,7 @@
                 <input asp-for="ID" class="form-control" type="hidden" readonly />
 
                 <div class="form-group col-12">
-                    <label asp-for="codigoAluno" class="control-label">Código Aluno</label>
+                    <label asp-for="codigoAluno" class="control-label">Código</label>
                     <input asp-for="codigoAluno" class="form-control" required/>
                     <span asp-validation-for="codigoAluno" class="text-danger"></span>
                 </div>
@@ -32,15 +32,17 @@
 
                 <div class="form-group col-12">
                     <label asp-for="Email" class="control-label"></label>
-                    <input asp-for="Email" type="email" class="form-control" required/>
+
+                    <input id="teste" name="teste" asp-for="Email" type="email" class="form-control" required />
+                    
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
 
                 <!--<div class="form-group col-6">
-        <label asp-for="Pass" class="control-label"></label>
-        <input type="text" asp-for="Pass" id="password" class="form-control" />
-        <span asp-validation-for="Pass" class="text-danger"></span>
-    </div>-->
+                    <label asp-for="Pass" class="control-label"></label>
+                    <input type="text" asp-for="Pass" id="password" class="form-control" />
+                    <span asp-validation-for="Pass" class="text-danger"></span>
+                </div>-->
 
                 <div class="form-group col-12">
                     <label asp-for="Pass" class="control-label">Password</label>
@@ -67,13 +69,12 @@
                 <div class="form-group col-12">
 
 
-
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: #236954;" data-toggle="modal" data-target="#exampleModal">
                         <i class="fas fa-save"></i> Criar Novo Utilizador
                     </button>
 
-                    
+
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">

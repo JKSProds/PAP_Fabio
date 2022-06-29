@@ -171,7 +171,6 @@ namespace PAP_Fabio.Controllers
             DB_Context context = HttpContext.RequestServices.GetService(typeof(DB_Context)) as DB_Context;
             int id_user = 0;
             int.TryParse(id, out id_user);
-
             return View(context.ObterUtil(id_user));
         }
 

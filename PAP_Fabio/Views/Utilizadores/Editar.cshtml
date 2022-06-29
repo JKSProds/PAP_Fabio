@@ -24,8 +24,13 @@
                     <span asp-validation-for="ID" class="text-danger"></span>
                 </div>
 
+                <div class="form-group col-12">
+                    <label asp-for="codigoAluno" class="control-label">Código</label>
+                    <input asp-for="codigoAluno" class="form-control" readonly />
+                    <span asp-validation-for="codigoAluno" class="text-danger"></span>
+                </div>
+
                 <input asp-for="tipo" class="form-control" type="hidden" readonly />
-                <input asp-for="codigoAluno" class="form-control" type="hidden" readonly />
 
                 <div class="form-group col-12">
                     <label asp-for="Nome" class="control-label"></label>
@@ -43,7 +48,7 @@
 
                 <div class="form-group col-12">
                     <input type="checkbox" asp-for="admin" class="form-control">
-                    <label asp-for="admin"> Admin </label><br>
+                    <label asp-for="admin"> Administrador </label><br>
                     <span asp-validation-for="admin" class="text-danger"></span>
                 </div>
 

@@ -119,6 +119,34 @@ namespace PAP_Fabio.Models
             return res;
         }
 
+        public Utilizador ObterEmail(string Email)
+        {
+            Utilizador res = new Utilizador();
+
+            using (Database db = ConnectionString)
+            {
+                using var result = db.Query("SELECT * FROM utilizadores where email ='" + Email + "';");
+                result.Read();
+                if (result.Reader.HasRows)
+                {
+                    res = new Utilizador()
+                    {
+                        ID = result["id_user"],
+                        Nome = result["nome"],
+                        Email = result["email"],
+                        Pass = result["pass"],
+                        tipo = result["tipo"],
+                        admin = result["admin"] == "1",
+                        codigoAluno = result["codigoAluno"]
+                    };
+                }
+
+            }
+
+            return res;
+        }
+
+
         public string ObterCodigoQR(Utilizador u)
         {
             string res = "data:image/png;base64,";
@@ -214,6 +242,7 @@ namespace PAP_Fabio.Models
             using (Database db = ConnectionString)
             {
                 using var result = db.Query("INSERT INTO utilizadores where id_user ='" + ID + "';");
+
                 result.Read();
                 if (result.Reader.HasRows)
                 {
@@ -243,6 +272,7 @@ namespace PAP_Fabio.Models
         {
             Database db = ConnectionString;
             String sql = "INSERT INTO utilizadores (id_user, email, pass, nome, admin, tipo, codigoAluno) values (" + util.ID + ", '" + util.Email + "','" + util.Pass + "', '" + util.Nome + "', " + (util.admin ? 1 : 0) + ", " + util.tipo + ", '" + util.codigoAluno + "');";
+
             db.Execute(sql);
             db.Connection.Close();
         }
