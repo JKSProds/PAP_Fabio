@@ -162,6 +162,26 @@ namespace PAP_Fabio.Models
             return res;
         }
 
+        public bool ExisteEmailDuplicado(string Email)
+        {
+            if (String.IsNullOrEmpty(Email)) return false;
+
+            int res = 0;
+
+            using (Database db = ConnectionString)
+            {
+                using var result = db.Query("SELECT Count(*) as Count FROM utilizadores where email = '" + Email + "';");
+
+                result.Read();
+
+                res = result["Count"];
+
+            }
+            return res > 0;
+
+        }
+
+
 
         public Utilizador Editar(int ID)
         {
